@@ -1,11 +1,11 @@
 package br.com.magnasistemas.enumerator;
 
 public enum enumSituacaoEscolar {
-	Completo(1), Cursando(2), Incompleto(3);
+	COMPLETO("Completo"), CURSANDO("Cursando"), INCOMPLETO("Incompleto");
 
-	private final int escolaridade;
+	private final String escolaridade;
 
-	enumSituacaoEscolar(int i) {
+	enumSituacaoEscolar(String i) {
 		escolaridade = i;
 	}
 }

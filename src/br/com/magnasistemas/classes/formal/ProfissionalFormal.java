@@ -1,8 +1,10 @@
-package br.com.magnasistemas.classes;
+package br.com.magnasistemas.classes.formal;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Month;
+
+import br.com.magnasistemas.classes.Profissional;
 
 public abstract class ProfissionalFormal extends Profissional {
 

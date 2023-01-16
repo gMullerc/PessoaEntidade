@@ -1,12 +1,12 @@
 package br.com.magnasistemas.enumerator;
 
 public enum enumEscolaridade {
-	ensinoFundamental(1), ensinoMedio(2), ensinoSuperior(3);
+	FUNDAMENTAL("Fundamental"), MEDIO("Medio"), SUPERIOR("Superior");
 
-	private final int escolaridade;
+	private final String escolaridade;
 
-	enumEscolaridade(int i) {
-		escolaridade = i;
+	enumEscolaridade(String i) {
+		this.escolaridade = i;
 	}
 
 }

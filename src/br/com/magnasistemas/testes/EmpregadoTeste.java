@@ -10,13 +10,14 @@ import java.util.Iterator;
 import java.util.List;
 
 import br.com.magnasistemas.classes.Endereco;
+import br.com.magnasistemas.classes.formal.Empregado;
 import br.com.magnasistemas.classes.formal.Trainee;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 
-public class TraineeTestes {
+public class EmpregadoTeste {
 	public static void main(String[] args) {
 		
 		String nome;
@@ -50,7 +51,7 @@ public class TraineeTestes {
 				
 				String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\FuncionarioCLT.csv";
 				
-				List<Trainee> list = new ArrayList<Trainee>();
+				List<Empregado> list = new ArrayList<Empregado>();
 				
 				try(BufferedReader br = new BufferedReader(new FileReader(path))) {
 					String linhas = br.readLine();
@@ -89,7 +90,7 @@ public class TraineeTestes {
 						anoDeInicio = Integer.parseInt(campo [25]); 
 						pis = Integer.parseInt(campo[26]);
 
-						Trainee traineee = new Trainee.Builder()
+						Empregado empregado = new Empregado.Builder()
 								.nome(nome)
 								.genero(genero)
 								.etnia(etnia)
@@ -110,7 +111,7 @@ public class TraineeTestes {
 								.pis(pis)
 								.build();
 						
-						list.add(traineee);
+						list.add(empregado);
 						
 					}
 					

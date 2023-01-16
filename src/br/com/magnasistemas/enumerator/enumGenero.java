@@ -1,11 +1,17 @@
 package br.com.magnasistemas.enumerator;
 
 public enum enumGenero {
-	feminino(1), masculino(2), naoBinario(3);
+	FEMININO("Feminino"), MASCULINO("Masculino"), NAOBINARIO("NaoBinario");
 
-	private final int genero;
+	private String genero;
 
-	enumGenero(int i) {
-		genero = i;
+	enumGenero(String g) {
+		this.genero = g;
 	}
+
+	public String getGenero() {
+		return this.genero;
+
+	}
+
 }

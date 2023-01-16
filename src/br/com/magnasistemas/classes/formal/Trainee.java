@@ -1,7 +1,8 @@
-package br.com.magnasistemas.classes;
+package br.com.magnasistemas.classes.formal;
 
 import java.time.LocalDate;
 
+import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
@@ -51,11 +52,6 @@ public class Trainee extends Clt {
 		private String nomeDaEmpresa;
 		private LocalDate diaDeInicio;
 		private int pis;
-
-
-		
-		
-
 
 		public Builder nome(final String nome) {
 			this.nome = nome;
@@ -151,30 +147,14 @@ public class Trainee extends Clt {
 			return new Trainee(this);
 		}
 
-		
-
 	}
 
 	@Override
 	public String toString() {
-
-		return "Trainee {\n" + "nome: " + this.nome + '\n' + "genero: " + this.genero + '\n' + "etnia: " + this.etnia + '\n'
-				+ "data de nascimento: " + this.dataDeNascimento + '\n' + "certidao de nascimento:  "
-				+ this.certidaoDeNascimento + '\n' + "rg: " + this.rg + '\n' + "cpf: " + this.cpf + '\n' + "contato: " + contato
-				+ '\n' + "endereco: " + this.endereco + '\n' + "estado civil: " + this.estadoCivil + '\n'
-				+ "escolaridade: " + this.escolaridade + '\n' + "situacao escolar: " + this.situacaoEscolar + '\n'
-				+ "cargo: " + this.cargo + '\n' + "remuneracao: " + this.remuneracao + '\n' + "carteira de trabalho: "
-				+ this.carteiraDeTrabalho + '\n' + "nome da empresa: " + this.nomeDaEmpresa + '\n' + "dia de inicio: "
-				+ this.diaDeInicio + '\n' + "pis: " + this.pis + '\n' +
-
-				'}';
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
-	
-	/*this.nome + this.genero + this.etnia + this.dataDeNascimento + this.certidaoDeNascimento +  this.rg + this.cpf + this.contato + this.endereco +  this.estadoCivil + this.escolaridade +
-	    + this.situacaoEscolar +  this.cargo + this.remuneracao + this.carteiraDeTrabalho + this.nomeDaEmpresa + + this.diaDeInicio + this.pis '}';*/
-	 
-				
 
-				
+
 
 }

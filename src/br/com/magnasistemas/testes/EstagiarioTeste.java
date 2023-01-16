@@ -10,13 +10,15 @@ import java.util.Iterator;
 import java.util.List;
 
 import br.com.magnasistemas.classes.Endereco;
+import br.com.magnasistemas.classes.formal.Empregado;
+import br.com.magnasistemas.classes.formal.Estagiario;
 import br.com.magnasistemas.classes.formal.Trainee;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 
-public class TraineeTestes {
+public class EstagiarioTeste {
 	public static void main(String[] args) {
 		
 		String nome;
@@ -40,17 +42,17 @@ public class TraineeTestes {
 		enumSituacaoEscolar situacaoEscolar;
 		String cargo;
 		Double remuneracao;
-		Integer carteiraDeTrabalho;
+		
 		String nomeDaEmpresa;
 		Integer diaDeInicio; 
 		Month mesDeInicio; 
 		Integer anoDeInicio; 
-		Integer pis;
+		
 		
 				
-				String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\FuncionarioCLT.csv";
+				String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\Estagiario.csv";
 				
-				List<Trainee> list = new ArrayList<Trainee>();
+				List<Estagiario> list = new ArrayList<Estagiario>();
 				
 				try(BufferedReader br = new BufferedReader(new FileReader(path))) {
 					String linhas = br.readLine();
@@ -82,14 +84,12 @@ public class TraineeTestes {
 						situacaoEscolar = enumSituacaoEscolar.valueOf(campo[18].toUpperCase());
 						cargo = campo[19];
 						remuneracao = Double.parseDouble(campo[20]);
-						carteiraDeTrabalho = Integer.parseInt(campo[21]);
-						nomeDaEmpresa = campo[22];
-						diaDeInicio = Integer.parseInt(campo [23]); 
-						mesDeInicio = Month.valueOf(campo[24]); 
-						anoDeInicio = Integer.parseInt(campo [25]); 
-						pis = Integer.parseInt(campo[26]);
+						nomeDaEmpresa = campo[21];
+						diaDeInicio = Integer.parseInt(campo [22]); 
+						mesDeInicio = Month.valueOf(campo[23]); 
+						anoDeInicio = Integer.parseInt(campo [24]); 
 
-						Trainee traineee = new Trainee.Builder()
+						Estagiario estagio = new Estagiario.Builder()
 								.nome(nome)
 								.genero(genero)
 								.etnia(etnia)
@@ -104,13 +104,13 @@ public class TraineeTestes {
 								.situacaoEscolar(situacaoEscolar)
 								.cargo(cargo)
 								.remuneracao(remuneracao)
-								.carteiraDeTrabalho(carteiraDeTrabalho)
+								
 								.nomeDaEmpresa(nomeDaEmpresa)
 								.diaDeInicio(LocalDate.of(anoDeInicio, mesDeInicio, diaDeInicio))
-								.pis(pis)
+								
 								.build();
 						
-						list.add(traineee);
+						list.add(estagio);
 						
 					}
 					

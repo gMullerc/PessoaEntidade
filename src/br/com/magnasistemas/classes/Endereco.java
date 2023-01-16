@@ -17,5 +17,12 @@ public class Endereco {
 		this.pais = pais;
 		this.cep = cep;
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "\n\t| Logradouro: " + this.rua + "\n\t| Numero: " + this.numero + "\n\t| CEP: " + this.cep+ "\n\t| Cidade: "
+				+ this.cidade + "\n\t| UF: " + this.uf + "\n\t| Pais: " + this.pais;
+		
+	}
 
 }

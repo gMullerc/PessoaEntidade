@@ -22,7 +22,7 @@ public class Cidadao extends Pessoa {
 
 	public String matricularEmUmaInstituicao(enumEscolaridade i) {
 
-		if (this.situacaoEscolar == enumSituacaoEscolar.Cursando) {
+		if (this.situacaoEscolar == enumSituacaoEscolar.CURSANDO) {
 			this.escolaridade = i;
 			return "Matriculado em: " + this.escolaridade;
 

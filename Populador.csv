@@ -1,2 +1,0 @@
-nome,genero,etnia,dataDeNascimento,certidaoDeNascimento,rg,cpf,contato,endereco,estadoCivil,escolaridade,situacaoEscolar,cargo,remuneracao,carteiraDeTrabalho,nomeDaEmpresa,dataDeInicio,Pis
-Guilherme,enumGenero.masculino,enumEtnia.Pardo,"LocalDate.of(2002,Month.DECEMBER, 10)","""232323""","""232323""","""23232323""",985421298,"new Endereco(""chinigua"", 05730100, 3, ""SaoPaulo"", ""SP"", ""Brail"")","""Solteiro""",enumEscolaridade.ensinoSuperior,enumSituacaoEscolar.Cursando,"""Desenvolvedor""",2200.0,688233,"""Magna Sistemas""","LocalDate.of(2022,Month.DECEMBER, 10)",23232

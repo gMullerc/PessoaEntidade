@@ -23,6 +23,7 @@ public abstract class Pessoa {
 		System.out.println("Andando...");
 	}
 
+
 	public void falar() throws IndexOutOfBoundsException {
 		try {
 			pensar();

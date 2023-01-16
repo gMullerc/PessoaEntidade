@@ -1,0 +1,4 @@
+nome,genero,etnia,diaDeNasc,mesDeNasc,anoDeNasc,certidaoDeNascimento,rg,cpf,contato,rua,cep,numero,cidade,uf,pais,estadoCivil,escolaridade,situacaoEscolar,cargo,remuneracao,nomeDaEmpresa,diaDeInicio,dataDeInicio,anoDeInicio
+Guilherme,MASCULINO,PARDO,1,AUGUST,2002,232323,232323,23232323,985421298,chinigua,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,CURSANDO,Desenvolvedor,2200.0,Magna Sistemas,5,DECEMBER,2022
+YSADORA,FEMININO,PARDO,4,NOVEMBER,2004,232323,232323,23232323,985421298,chinigua,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,CURSANDO,Desenvolvedor,2200.0,Magna Sistemas,5,DECEMBER,2022
+JONAS,MASCULINO,PRETO,5,AUGUST,2002,232323,232323,23232323,985421298,chinigua,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,CURSANDO,Desenvolvedor,2200.0,Magna Sistemas,5,DECEMBER,2022
