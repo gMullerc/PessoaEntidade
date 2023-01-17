@@ -30,6 +30,11 @@ public class Trainee extends Clt {
 		this.diaDeInicio = builder.diaDeInicio;
 		this.pis = builder.pis;
 
+		
+	}
+
+	public Trainee() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public static class Builder {

@@ -9,11 +9,9 @@ import br.com.magnasistemas.classes.Profissional;
 public abstract class ProfissionalFormal extends Profissional {
 
 	protected int horasTrabalhadas;
-	
+
 	protected String nomeDaEmpresa;
 	protected LocalDate diaDeInicio;
-	
-	
 
 	public void baterPonto(LocalTime horaInicial, LocalTime horaFinal) {
 
@@ -39,18 +37,26 @@ public abstract class ProfissionalFormal extends Profissional {
 		descancoSemanal();
 	}
 
-	public void descancoSemanal() {
+	public boolean descancoSemanal() {
 		if (this.horasTrabalhadas >= 40) {
 			System.out.println("Descançando!!!....");
 			this.horasTrabalhadas = 0;
+			return true;
 		} else {
 			int faltante = 40 - this.horasTrabalhadas;
 			System.out.printf("apenas mais %d horas para a folga...", faltante);
+			return false;
 		}
 
 	}
 
-	public void tirarFerias() {
+
+
+	public void setHorasTrabalhadas(int horasTrabalhadas) {
+		this.horasTrabalhadas = horasTrabalhadas;
+	}
+
+	public boolean tirarFerias() {
 		LocalDate agora = LocalDate.now();
 
 		int ano = agora.getYear();
@@ -58,13 +64,18 @@ public abstract class ProfissionalFormal extends Profissional {
 		int dia = agora.getDayOfMonth();
 
 		int anoFerias = ano - this.diaDeInicio.getYear();
+		System.out.println(anoFerias);
 		int mesFerias = mes.compareTo(this.diaDeInicio.getMonth());
 
-		if (mesFerias == 0 && anoFerias >= 1 || mesFerias == 1 && anoFerias >= 1) {
+		if (anoFerias >= 1) {
 			System.out.println("Tirando Ferias...");
+			return true;
 		} else {
+
 			System.out.println("Ainda não é possível tirar as férias...");
+			return false;
 		}
 
 	}
+
 }

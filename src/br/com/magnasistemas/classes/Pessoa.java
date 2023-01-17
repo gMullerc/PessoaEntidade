@@ -47,7 +47,7 @@ public abstract class Pessoa {
 		System.out.println("|PENSANDO.. HMM|");
 		for (int i = 0; i < falas.size(); i++) {
 
-			System.out.printf("|%d - %23s|\n", i + 1, falas.get(i));
+			System.out.printf("|%d - %23s|\n", i + 1, falas.get(i)); 
 		}
 	}
 

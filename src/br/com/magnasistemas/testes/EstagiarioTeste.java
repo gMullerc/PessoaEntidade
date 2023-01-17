@@ -42,14 +42,13 @@ public class EstagiarioTeste {
 		enumSituacaoEscolar situacaoEscolar;
 		String cargo;
 		Double remuneracao;
-		
 		String nomeDaEmpresa;
 		Integer diaDeInicio; 
 		Month mesDeInicio; 
 		Integer anoDeInicio; 
 		
 		
-				
+				 
 				String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\Estagiario.csv";
 				
 				List<Estagiario> list = new ArrayList<Estagiario>();
@@ -118,7 +117,10 @@ public class EstagiarioTeste {
 					// TODO: handle exception
 				}
 				System.out.println(list.get(0));
+				list.get(0).aprenderNovasFalas("aaaaaaaaaaaa");
+				list.get(0).pensar();
 				}
+	
 	
 	
 

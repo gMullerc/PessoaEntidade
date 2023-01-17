@@ -1,0 +1,4 @@
+nome,genero,etnia,diaDeNasc,mesDeNasc,anoDeNasc,certidaoDeNascimento,rg,cpf,contato,rua,cep,numero,cidade,uf,pais,estadoCivil,escolaridade,situacaoEscolar,cargo,remuneracao,cnpj,razaosocial,nomefantasia,ruaDaEmpresa,cep,numero,cidade,uf,pais,sigla
+Guilherme,MASCULINO,PARDO,1,AUGUST,2002,232323,232323,23232323,985421298,chinigua,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,CURSANDO,Desenvolvedor,2200.0,237423847,Grande Oriente De Sao Paulo,GOSP,São Joaquim,8273482,47,Sao Paulo,SP,Brasil,EIRELI
+YSADORA,FEMININO,PARDO,4,NOVEMBER,2004,232323,232323,23232323,985421298,chinigua,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,CURSANDO,Desenvolvedor,2200.0,237423847,MagnaSistemas,Magna,Pinheiros,8273482,47,Sao Paulo,SP,Brasil,EIRELI
+JONAS,MASCULINO,PRETO,5,AUGUST,2002,232323,232323,23232323,985421298,chinigua,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,CURSANDO,Desenvolvedor,2200.0,237423847,ZAHIL VINHO,ZAHIL,JURUBATUBA,8273482,47,Sao Paulo,SP,Brasil,EIRELI

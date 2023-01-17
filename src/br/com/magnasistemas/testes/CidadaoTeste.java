@@ -6,9 +6,9 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+import br.com.magnasistemas.classes.Cidadao;
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.classes.formal.Trainee;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
@@ -16,7 +16,7 @@ import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 
-public class TraineeTestes {
+public class CidadaoTeste {
 	public static void main(String[] args) {
 
 		String nome;
@@ -38,18 +38,12 @@ public class TraineeTestes {
 		String estadoCivil;
 		enumEscolaridade escolaridade;
 		enumSituacaoEscolar situacaoEscolar;
-		String cargo;
-		Double remuneracao;
-		Integer carteiraDeTrabalho;
-		String nomeDaEmpresa;
-		Integer diaDeInicio;
-		Month mesDeInicio;
-		Integer anoDeInicio;
-		Integer pis;
+		
+		
 
-		String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\FuncionarioCLT.csv";
+		String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\Cidadao.csv";
 
-		List<Trainee> list = new ArrayList<Trainee>();
+		List<Cidadao> lista = new ArrayList<Cidadao>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String linhas = br.readLine();
@@ -58,7 +52,7 @@ public class TraineeTestes {
 			while (linhas != null) {
 				linhas = br.readLine();
 				String[] campo = linhas.split(",");
- 
+
 				nome = campo[0];
 				genero = enumGenero.valueOf(campo[1].toUpperCase());
 				etnia = enumEtnia.valueOf(campo[2].toUpperCase());
@@ -78,36 +72,21 @@ public class TraineeTestes {
 				estadoCivil = campo[16];
 				escolaridade = enumEscolaridade.valueOf(campo[17].toUpperCase());
 				situacaoEscolar = enumSituacaoEscolar.valueOf(campo[18].toUpperCase());
-				cargo = campo[19];
-				remuneracao = Double.parseDouble(campo[20]);
-				carteiraDeTrabalho = Integer.parseInt(campo[21]);
-				nomeDaEmpresa = campo[22];
-				diaDeInicio = Integer.parseInt(campo[23]);
-				mesDeInicio = Month.valueOf(campo[24]);
-				anoDeInicio = Integer.parseInt(campo[25]);
-				pis = Integer.parseInt(campo[26]);
 
-				Trainee traineee = new Trainee.Builder().nome(nome).genero(genero).etnia(etnia)
+				Cidadao cidadao = new Cidadao.Builder().nome(nome).genero(genero).etnia(etnia)
 						.dataDeNascimento(LocalDate.of(anoDeNasc, mesDeNasc, diaDeNasc))
 						.certidaoDeNascimento(certidaoDeNascimento).rg(rg).cpf(cpf).contato(contato)
 						.endereco(new Endereco(rua, cep, numero, cidade, uf, pais)).estadoCivil(estadoCivil)
-						.escolaridade(escolaridade).situacaoEscolar(situacaoEscolar).cargo(cargo)
-						.remuneracao(remuneracao).carteiraDeTrabalho(carteiraDeTrabalho).nomeDaEmpresa(nomeDaEmpresa)
-						.diaDeInicio(LocalDate.of(anoDeInicio, mesDeInicio, diaDeInicio)).pis(pis).build();
+						.escolaridade(escolaridade).situacaoEscolar(situacaoEscolar).build();
 
-				list.add(traineee);
+				lista.add(cidadao);
 
 			}
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 
-		list.get(0).matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR);
-
-		for (Trainee trainee : list) {
-			System.out.println(trainee);
-		}
+		
 	}
-
 }

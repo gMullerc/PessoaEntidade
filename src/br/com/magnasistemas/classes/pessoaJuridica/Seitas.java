@@ -170,7 +170,11 @@ public class Seitas extends organizacaoReligiosa {
 				+ this.certidaoDeNascimento + '\n' + "rg: " + this.rg + '\n' + "cpf: " + this.cpf + '\n' + "contato: "
 				+ contato + '\n' + "endereco: " + this.endereco + '\n' + "estado civil: " + this.estadoCivil + '\n'
 				+ "escolaridade: " + this.escolaridade + '\n' + "situacao escolar: " + this.situacaoEscolar + '\n'
-				+ "cargo: " + this.cargo + '\n' + "remuneracao: " + this.remuneracao + '\n' + "nome da empresa: ";
+				+ "cargo: " + this.cargo + '\n' + "Remuneracao: " + this.remuneracao + '\n' + "CNPJ: " + this.cnpj
+				+ '\n' + "Razao Social: " + this.razaoSocial + '\n' + "Nome Fantasia: " + this.nomeFantasia
+				+ "Endereco da Empresa: " + this.enderecoEmpresarial + '\n' + "Sigla: " + this.sigla + '\n'
+				+ "Religiao: " + this.religiao + '}';
+
 	}
 
 

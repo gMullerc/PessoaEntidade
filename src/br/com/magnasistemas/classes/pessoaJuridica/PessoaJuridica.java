@@ -1,6 +1,7 @@
 package br.com.magnasistemas.classes.pessoaJuridica;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -14,22 +15,25 @@ public abstract class PessoaJuridica extends Profissional implements geradorDeNo
 	protected String razaoSocial;
 	protected String nomeFantasia;
 	protected Endereco enderecoEmpresarial;
-	private List<Integer> notasGeradasJuridicas;
-	private List<Integer> notasGeradasFisicas;
+	private List<Integer> notasGeradasJuridicas = new ArrayList<>();
+	private List<Integer> notasGeradasFisicas = new ArrayList<>();
+
 	@Override
 	public int notaFiscalPessoaJuridica(String cnpj, LocalDate dataDeEmissao) {
 		Random aleatorio = new Random();
 		Integer valor = aleatorio.nextInt(30000) + 10000;
 		boolean verifica = true;
-		while (verifica == true) {
+		if (notasGeradasJuridicas.size() > 0) {
+			while (verifica == true) {
 
-			for (int i = 0; i < this.notasGeradasJuridicas.size(); i++) {
-				if (valor.equals(notasGeradasJuridicas.get(i))) {
-					verifica = true;
-					valor = aleatorio.nextInt(30000) + 10000;
-				} else {
-					verifica = false;
-					
+				for (int i = 0; i < this.notasGeradasJuridicas.size(); i++) {
+					if (valor.equals(notasGeradasJuridicas.get(i))) {
+						verifica = true;
+						valor = aleatorio.nextInt(30000) + 10000;
+					} else {
+						verifica = false;
+
+					}
 				}
 			}
 		}
@@ -50,12 +54,21 @@ public abstract class PessoaJuridica extends Profissional implements geradorDeNo
 					valor = aleatorio.nextInt(30000) + 10000;
 				} else {
 					verifica = false;
-					
+
 				}
 			}
 		}
+
 		this.notasGeradasFisicas.add(valor);
 		return valor;
+	}
+
+	public List<Integer> getNotasGeradasJuridicas() {
+		return notasGeradasJuridicas;
+	}
+
+	public List<Integer> getNotasGeradasFisicas() {
+		return notasGeradasFisicas;
 	}
 
 }

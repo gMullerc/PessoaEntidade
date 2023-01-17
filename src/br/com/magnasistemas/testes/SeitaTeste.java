@@ -11,12 +11,14 @@ import java.util.List;
 
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.classes.formal.Trainee;
+import br.com.magnasistemas.classes.pessoaJuridica.Igreja;
+import br.com.magnasistemas.classes.pessoaJuridica.Seitas;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 
-public class TraineeTestes {
+public class SeitaTeste {
 	public static void main(String[] args) {
 
 		String nome;
@@ -40,16 +42,21 @@ public class TraineeTestes {
 		enumSituacaoEscolar situacaoEscolar;
 		String cargo;
 		Double remuneracao;
-		Integer carteiraDeTrabalho;
-		String nomeDaEmpresa;
-		Integer diaDeInicio;
-		Month mesDeInicio;
-		Integer anoDeInicio;
-		Integer pis;
+		String cnpj;
+		String razaoSocial;
+		String nomeFantasia;
+		String ruaDaEmpresa;
+		Integer cepDaEmpresa;
+		Integer numeroDaEmpresa;
+		String cidadeDaEmpresa;
+		String ufDaEmpresa;
+		String paisDaEmpresa;
+		String sigla;
+		String religiao;
 
-		String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\FuncionarioCLT.csv";
+		String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\Seita.csv";
 
-		List<Trainee> list = new ArrayList<Trainee>();
+		List<Seitas> list = new ArrayList<Seitas>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String linhas = br.readLine();
@@ -58,7 +65,7 @@ public class TraineeTestes {
 			while (linhas != null) {
 				linhas = br.readLine();
 				String[] campo = linhas.split(",");
- 
+
 				nome = campo[0];
 				genero = enumGenero.valueOf(campo[1].toUpperCase());
 				etnia = enumEtnia.valueOf(campo[2].toUpperCase());
@@ -80,22 +87,28 @@ public class TraineeTestes {
 				situacaoEscolar = enumSituacaoEscolar.valueOf(campo[18].toUpperCase());
 				cargo = campo[19];
 				remuneracao = Double.parseDouble(campo[20]);
-				carteiraDeTrabalho = Integer.parseInt(campo[21]);
-				nomeDaEmpresa = campo[22];
-				diaDeInicio = Integer.parseInt(campo[23]);
-				mesDeInicio = Month.valueOf(campo[24]);
-				anoDeInicio = Integer.parseInt(campo[25]);
-				pis = Integer.parseInt(campo[26]);
+				cnpj = campo[21];
+				razaoSocial = campo[22];
+				nomeFantasia = campo[23];
+				ruaDaEmpresa = campo[24];
+				cepDaEmpresa = Integer.parseInt(campo[25]);
+				numeroDaEmpresa = Integer.parseInt(campo[26]);
+				cidadeDaEmpresa = campo[27];
+				ufDaEmpresa = campo[28];
+				paisDaEmpresa = campo[29];
+				sigla = campo[30];
+				religiao = campo[31];
 
-				Trainee traineee = new Trainee.Builder().nome(nome).genero(genero).etnia(etnia)
+				Seitas i = new Seitas.Builder().nome(nome).genero(genero).etnia(etnia)
 						.dataDeNascimento(LocalDate.of(anoDeNasc, mesDeNasc, diaDeNasc))
 						.certidaoDeNascimento(certidaoDeNascimento).rg(rg).cpf(cpf).contato(contato)
 						.endereco(new Endereco(rua, cep, numero, cidade, uf, pais)).estadoCivil(estadoCivil)
 						.escolaridade(escolaridade).situacaoEscolar(situacaoEscolar).cargo(cargo)
-						.remuneracao(remuneracao).carteiraDeTrabalho(carteiraDeTrabalho).nomeDaEmpresa(nomeDaEmpresa)
-						.diaDeInicio(LocalDate.of(anoDeInicio, mesDeInicio, diaDeInicio)).pis(pis).build();
-
-				list.add(traineee);
+						.remuneracao(remuneracao).cnpj(cnpj).razaoSocial(razaoSocial).nomeFantasia(nomeFantasia)
+						.enderecoProfissional(new Endereco(ruaDaEmpresa, cepDaEmpresa, numeroDaEmpresa, cidadeDaEmpresa,
+								ufDaEmpresa, paisDaEmpresa))
+						.Sigla(sigla).religiao(religiao).build();
+				list.add(i);
 
 			}
 
@@ -105,8 +118,8 @@ public class TraineeTestes {
 
 		list.get(0).matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR);
 
-		for (Trainee trainee : list) {
-			System.out.println(trainee);
+		for (Seitas i : list) {
+			System.out.println(i);
 		}
 	}
 
