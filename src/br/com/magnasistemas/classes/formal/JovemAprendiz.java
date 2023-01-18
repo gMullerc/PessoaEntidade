@@ -160,6 +160,8 @@ public class JovemAprendiz extends Clt implements VinculoEsudantil {
 		return super.toString();
 	}
 
+
+	
 	@Override
 	public String verificar() {
 		if (this.situacaoEscolar == enumSituacaoEscolar.INCOMPLETO) {

@@ -30,7 +30,7 @@ public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 		this.nomeDaEmpresa = builder.nomeDaEmpresa;
 		this.diaDeInicio = builder.diaDeInicio;
 
-	}
+	} 
 
 	public static class Builder {
 

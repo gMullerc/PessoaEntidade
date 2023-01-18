@@ -25,8 +25,8 @@ import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 class TestesClasseOrganizacaoReligiosa {
 
 	@Test()
-	@DisplayName("Verifica a quantidade de notas criadas e se não ouve repeticao de notas")
-	void testeMetodoGerarNotasJuridicas() {
+	@DisplayName("Verifica se o metodo anotar novo seguidor está realmente anotando um novo seguidor")
+	void TesteNoMetodoAnotarNovoSeguidor() {
 
 		Igreja i = new Igreja.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
@@ -43,7 +43,7 @@ class TestesClasseOrganizacaoReligiosa {
 				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil("Solteiro")
 				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
-		assertEquals(t, i.anotarNovoSeguidor(t));
+		assertEquals(t, i.anotarNovoSeguidor(t)); 
 
 	}
 	@Test()

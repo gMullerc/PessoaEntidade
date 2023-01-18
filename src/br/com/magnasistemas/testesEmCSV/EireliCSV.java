@@ -57,7 +57,7 @@ public class EireliCSV {
 			String linhas = br.readLine();
 
 			while (linhas != null) {
-				linhas = br.readLine();
+				linhas = br.readLine(); 
 				String[] campo = linhas.split(",");
 
 				nome = campo[0];
@@ -90,7 +90,7 @@ public class EireliCSV {
 				cidadeDaEmpresa = campo[27];
 				ufDaEmpresa = campo[28];
 				paisDaEmpresa = campo[29];
-				sigla = campo[30]; 
+				sigla = campo[30];
 
 				EIRELI i = new EIRELI.Builder().nome(nome).genero(genero).etnia(etnia)
 						.dataDeNascimento(LocalDate.of(anoDeNasc, mesDeNasc, diaDeNasc))

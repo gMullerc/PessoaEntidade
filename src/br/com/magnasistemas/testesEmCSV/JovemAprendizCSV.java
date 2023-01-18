@@ -1,17 +1,17 @@
 package br.com.magnasistemas.testesEmCSV;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.classes.formal.JovemAprendiz;
-import br.com.magnasistemas.classes.formal.Trainee;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
@@ -59,7 +59,7 @@ public class JovemAprendizCSV {
 			while (linhas != null) {
 				linhas = br.readLine();
 				String[] campo = linhas.split(",");
- 
+
 				nome = campo[0];
 				genero = enumGenero.valueOf(campo[1].toUpperCase());
 				etnia = enumEtnia.valueOf(campo[2].toUpperCase());
@@ -101,16 +101,21 @@ public class JovemAprendizCSV {
 			}
 
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
 
-		list.get(0).matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR);
+		try {
 
-		for (JovemAprendiz trainee : list) {
-			System.out.println(trainee);
+			FileWriter file = new FileWriter(
+					"C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\src\\CSVSaida\\JovemAprendizCSV.csv");
+
+			BufferedWriter output = new BufferedWriter(file);
+
+			output.write(list.get(0).toString());
+
+			output.close();
+		} catch (Exception e) {
 		}
-		String valor = list.get(0).verificar();
-		System.out.println(valor);
+
 	}
 
 }

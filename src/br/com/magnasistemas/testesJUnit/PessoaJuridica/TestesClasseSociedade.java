@@ -4,13 +4,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.time.LocalDate;
+import java.time.Month;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import br.com.magnasistemas.classes.Cidadao;
 import br.com.magnasistemas.classes.Endereco;
+import br.com.magnasistemas.classes.formal.Trainee;
 import br.com.magnasistemas.classes.pessoaJuridica.EIRELI;
+import br.com.magnasistemas.classes.pessoaJuridica.Igreja;
 import br.com.magnasistemas.classes.pessoaJuridica.Sociedade;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
 import br.com.magnasistemas.enumerator.enumEtnia;
@@ -35,7 +38,7 @@ class TestesClasseSociedade {
 		assertNotEquals(null, i);
 
 	}
-	
+
 	@Test()
 	@DisplayName("Verfica se ao adicionar um socio o tamanho da lista de socios cresceram")
 	void adicaoDeSocios() {
@@ -62,8 +65,8 @@ class TestesClasseSociedade {
 	}
 
 	@Test()
-	@DisplayName("Verifica a quantidade de notas criadas e se não ouve repeticao de notas")
-	void testeRemocaoDeSocios() {
+	@DisplayName("Teste no metodo de remocao de socios, verifica se ele foi removido.")
+	void verificarSeFoiDemitido() {
 
 		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
@@ -80,10 +83,48 @@ class TestesClasseSociedade {
 				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil("Solteiro")
 				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
-		i.addNovosSocios(t);
-		int qntd = i.quantidadadeDeSocios();
+		Cidadao j = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil("Solteiro")
+				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
-		assertNotEquals(qntd, i.removerSocios(0));
+		i.addNovosSocios(j);
+		i.ListarFuncionario();
+
+		assertEquals(true, i.removerSocios(j));
+
+	}
+
+	@Test()
+	@DisplayName("Teste no metodo de remocao de socios, verifica se ele foi removido sem ser um socio")
+	void verificarSeFoiRemovidoSeNaoEraSocio() {
+
+		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil("Solteiro")
+				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
+				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.Sigla("Sociedade").natureza(enumNatureza.SIMPLES).build();
+
+		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil("Solteiro")
+				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+
+		Cidadao j = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil("Solteiro")
+				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+
+		i.addNovosSocios(t);
+		i.ListarFuncionario();
+
+		assertNotEquals(true, i.removerSocios(j));
 
 	}
 

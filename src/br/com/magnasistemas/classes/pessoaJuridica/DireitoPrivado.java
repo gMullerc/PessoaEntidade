@@ -29,7 +29,20 @@ public abstract class DireitoPrivado extends PessoaJuridica {
 			System.out.printf("Um valor de: %.2f foi depositado", valor);
 			return true;
 		}
-		
+		 
+	} 
+	public boolean demitirFuncionario(ProfissionalFormal f) {
+		boolean val = false;
+		for (int i = 0; i < this.funcionarios.size(); i++) {
+			if(this.funcionarios.get(i).equals(f)) {
+				this.funcionarios.remove(i);
+				val = true;
+			}else {
+				System.out.println("Funcionario Inexistente");
+				val = false;
+			}
+			
+		}return val;
 	}
 
 	public void ListarFuncionario() {

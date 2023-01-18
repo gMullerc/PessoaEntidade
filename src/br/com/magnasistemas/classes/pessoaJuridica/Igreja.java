@@ -162,7 +162,7 @@ public class Igreja extends organizacaoReligiosa {
 		}
 
 	}
- 
+
 	@Override
 	public String toString() {
 		return "{" + "nome: " + this.nome + '\n' + "genero: " + this.genero + '\n' + "etnia: " + this.etnia + '\n'

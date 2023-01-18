@@ -35,7 +35,7 @@ public class EIRELI extends DireitoPrivado {
 		this.enderecoEmpresarial = builder.enderecoEmpresarial;
 		this.sigla = builder.sigla;
 
-	}
+	} 
 
 	public static class Builder {
 
@@ -169,7 +169,7 @@ public class EIRELI extends DireitoPrivado {
 				+ "cargo: " + this.cargo + '\n' + "Remuneracao: " + this.remuneracao + '\n' + "CNPJ: " + this.cnpj
 				+ '\n' + "Razao Social: " + this.razaoSocial + '\n' + "Nome Fantasia: " + this.nomeFantasia
 				+ "Endereco da Empresa: " + this.enderecoEmpresarial + '\n' + "Sigla: " + this.sigla +'}';
-
+ 
 	}
 
 	public void abrirFilial(Endereco e) {

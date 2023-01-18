@@ -25,7 +25,7 @@ import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 class TestesClassePessoaJuridica {
 
 	@Test()
-	@DisplayName("Verifica a quantidade de notas criadas e se não ouve repeticao de notas")
+	@DisplayName("Verifica a quantidade de notas criadas e se não ouve repeticao de notas, deve retornar um contador com o tamanho da Hashset para validar se não entrou notas repetidas")
 	void testeMetodoGerarNotasJuridicas() {
 
 		Igreja i = new Igreja.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
@@ -38,7 +38,7 @@ class TestesClassePessoaJuridica {
 				.religiao("CATOLICA").build();
 		int contador = 0;
 
-		for (int j = 0; j < 100; j++) {
+		for (int j = 0; j < 1000; j++) {
 			i.notaFiscalPessoa("2", LocalDate.now());
 			contador++;
 		}

@@ -38,7 +38,7 @@ class TestesClasseCidadao {
 	
 	@Test()
 	@DisplayName("Esse teste deveria retornar que foi matriculado quando a situacao for diferente de cursando")
-	void testeMetodoMatricularEmInstituicaoPOSITIVO() {
+	void testeMetodoMatricularEmInstituicaoPOSITIVO() { 
 
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")

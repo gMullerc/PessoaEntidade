@@ -60,7 +60,7 @@ public class Cidadao extends Pessoa {
 		public Builder genero(final enumGenero genero) {
 			this.genero = genero;
 			return this;
-		}
+		} 
 
 		public Builder etnia(final enumEtnia etnia) {
 			this.etnia = etnia;

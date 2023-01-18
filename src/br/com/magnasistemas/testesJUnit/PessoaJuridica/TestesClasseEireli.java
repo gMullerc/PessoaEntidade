@@ -33,11 +33,11 @@ class TestesClasseEireli {
 				.Sigla("Sociedade").build();
 
 		assertNotEquals(null, i);
-
+ 
 	}
 
 	@Test()
-	@DisplayName("Verfica se ao adicionar um socio o tamanho da lista de socios cresceram")
+	@DisplayName("Verifica se o metodo de criar filiais esta crescendo conforme adiciona filiais a lista")
 	void verificarQuantidadeDeFiliais() {
 
 		EIRELI i = new EIRELI.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)

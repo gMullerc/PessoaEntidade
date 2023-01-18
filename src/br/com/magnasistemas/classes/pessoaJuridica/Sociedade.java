@@ -6,6 +6,7 @@ import java.util.List;
 
 import br.com.magnasistemas.classes.Cidadao;
 import br.com.magnasistemas.classes.Endereco;
+import br.com.magnasistemas.classes.formal.ProfissionalFormal;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
@@ -202,9 +203,19 @@ public class Sociedade extends DireitoPrivado {
 		}
 	}
 
-	public int removerSocios(int p) {
-		this.socios.remove(p);
-		return quantidadadeDeSocios();
+	public boolean removerSocios(Cidadao f) {
+		boolean val = false;
+		for (int i = 0; i < this.socios.size(); i++) {
+			if (this.socios.get(i).equals(f)) {
+				this.socios.remove(i);
+				val = true;
+			} else {
+				System.out.println("Socio Inexistente");
+				val = false;
+			}
+
+		}
+		return val;
 	}
 
 }

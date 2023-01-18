@@ -33,9 +33,9 @@ class TestesClasseIgreja {
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
 				.Sigla("Sociedade").build();
 
-		assertNotEquals(null, i);
+		assertNotEquals(null, i); 
 
-	}
+	} 
 
 
 }

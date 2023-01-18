@@ -1,7 +1,9 @@
 package br.com.magnasistemas.testesEmCSV;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -58,7 +60,7 @@ public class TraineeCSV {
 			while (linhas != null) {
 				linhas = br.readLine();
 				String[] campo = linhas.split(",");
- 
+
 				nome = campo[0];
 				genero = enumGenero.valueOf(campo[1].toUpperCase());
 				etnia = enumEtnia.valueOf(campo[2].toUpperCase());
@@ -101,6 +103,18 @@ public class TraineeCSV {
 
 		} catch (Exception e) {
 			// TODO: handle exception
+		}
+		try {
+
+			FileWriter file = new FileWriter(
+					"C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\src\\CSVSaida\\TraineeCSV.csv");
+
+			BufferedWriter output = new BufferedWriter(file);
+
+			output.write(list.get(0).toString());
+
+			output.close();
+		} catch (Exception e) {
 		}
 
 		list.get(0).matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR);

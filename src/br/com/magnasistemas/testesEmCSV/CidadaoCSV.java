@@ -1,7 +1,9 @@
 package br.com.magnasistemas.testesEmCSV;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -38,12 +40,10 @@ public class CidadaoCSV {
 		String estadoCivil;
 		enumEscolaridade escolaridade;
 		enumSituacaoEscolar situacaoEscolar;
-		
-		
 
 		String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\src\\CSVs\\CidadaoCSV.csv";
 
-		List<Cidadao> lista = new ArrayList<Cidadao>();
+		List<Cidadao> list = new ArrayList<Cidadao>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String linhas = br.readLine();
@@ -79,14 +79,26 @@ public class CidadaoCSV {
 						.endereco(new Endereco(rua, cep, numero, cidade, uf, pais)).estadoCivil(estadoCivil)
 						.escolaridade(escolaridade).situacaoEscolar(situacaoEscolar).build();
 
-				lista.add(cidadao);
+				list.add(cidadao);
 
 			}
 
 		} catch (Exception e) {
-			
+
 		}
-		System.out.println(lista.get(0));
-		
+		try {
+
+			FileWriter file = new FileWriter(
+					"C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\src\\CSVSaida\\CidadaoCSV.csv");
+
+			BufferedWriter output = new BufferedWriter(file);
+
+			output.write(list.get(0).toString());
+
+			output.close();
+		} catch (Exception e) {
+		}
+		System.out.println(list.get(0));
+
 	}
 }
