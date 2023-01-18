@@ -1,0 +1,4 @@
+nome,genero,etnia,diaDeNasc,mesDeNasc,anoDeNasc,certidaoDeNascimento,rg,cpf,contato,rua,cep,numero,cidade,uf,pais,estadoCivil,escolaridade,situacaoEscolar,cargo,remuneracao,carteiraDeTrabalho,nomeDaEmpresa,diaDeInicio,dataDeInicio,anoDeInicio,Pis
+Guilherme,MASCULINO,PARDO,2,AUGUST,2002,232323,232323,23232323,985421298,Sao Joaquim,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,COMPLETO,DesenvolvedorUsuario,2200.0,688233,Magna Sistemas,5,DECEMBER,2022,23232
+Igor,MASCULINO,PARDO,2,AUGUST,2002,232323,232323,23232323,985421298,Sao Joaquim,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,COMPLETO,Desenvolvedor,2200.0,688233,Magna Sistemas,5,DECEMBER,2022,23232
+Daniel,MASCULINO,PARDO,2,AUGUST,2002,232323,232323,23232323,985421298,Sao Joaquim,5736100,3,Sao Paulo,SP,Brasil,Solteiro,SUPERIOR,COMPLETO,DesenvolvedorUsuario,100000.45,688233,Magna Sistemas,5,DECEMBER,2022,23232

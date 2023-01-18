@@ -157,7 +157,7 @@ public class Sociedade extends DireitoPrivado {
 			return this;
 		}
 
-		public Builder Sigla(final enumNatureza natureza) {
+		public Builder natureza(final enumNatureza natureza) {
 			this.natureza = natureza;
 			return this;
 		}
@@ -187,8 +187,13 @@ public class Sociedade extends DireitoPrivado {
 		System.out.println("Sociedade Criada");
 	}
 
-	public void addNovosSocios(Cidadao p) {
+	public int quantidadadeDeSocios() {
+		return this.socios.size();
+	}
+
+	public int addNovosSocios(Cidadao p) {
 		this.socios.add(p);
+		return quantidadadeDeSocios();
 	}
 
 	public void listarSocios() {
@@ -197,8 +202,9 @@ public class Sociedade extends DireitoPrivado {
 		}
 	}
 
-	public void removerSocios(int p) {
+	public int removerSocios(int p) {
 		this.socios.remove(p);
+		return quantidadadeDeSocios();
 	}
 
 }

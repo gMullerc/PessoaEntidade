@@ -8,6 +8,9 @@ public abstract class Clt extends ProfissionalFormal {
 	public double consultarFgts() {
 		return this.saldoFgts;
 	}
+	public void setSaldoFgts(double saldoFgts) {
+		this.saldoFgts = saldoFgts;
+	}
 
 	@Override
 	public String toString() {
@@ -19,6 +22,6 @@ public abstract class Clt extends ProfissionalFormal {
 				+ "escolaridade: " + this.escolaridade + '\n' + "situacao escolar: " + this.situacaoEscolar + '\n'
 				+ "cargo: " + this.cargo + '\n' + "remuneracao: " + this.remuneracao + '\n' + "carteira de trabalho: "
 				+ this.carteiraDeTrabalho + '\n' + "nome da empresa: " + this.nomeDaEmpresa + '\n' + "dia de inicio: "
-				+ this.diaDeInicio + '\n' + "pis: " + this.pis +'}';
+				+ this.diaDeInicio + '\n' + "pis: " + this.pis+'}' +'\n'+'\n'+'\n'+'\n';
 	}
 }

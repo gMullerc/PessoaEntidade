@@ -150,13 +150,12 @@ public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 	}
 
 	@Override
-	public void verificar() {
-		if (this.escolaridade == enumEscolaridade.SUPERIOR && this.situacaoEscolar == enumSituacaoEscolar.CURSANDO
-				|| this.escolaridade == enumEscolaridade.MEDIO
-						&& this.situacaoEscolar == enumSituacaoEscolar.CURSANDO) {
-
+	public String verificar() {
+		if (this.situacaoEscolar == enumSituacaoEscolar.INCOMPLETO) {
+			
+			return "Para ser um Estagiario é necessário estar cursando o ensino medio ou superior";
 		} else {
-			throw new RuntimeException("Para ser um estagiário é necessário estar cursando o ensino medio ou superior");
+			return "Estah apto...";
 		}
 
 	}

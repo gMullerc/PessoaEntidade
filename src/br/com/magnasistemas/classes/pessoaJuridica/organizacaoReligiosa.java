@@ -9,9 +9,9 @@ public abstract class organizacaoReligiosa extends DireitoPrivado {
 	protected List<Cidadao> seguidores = new ArrayList<>();
 	protected String religiao;
 
-	public void orar() {
+	public String orar() {
 
-		System.out.println("Orando...");
+		return "Orando...";
 
 	}
 
@@ -22,8 +22,9 @@ public abstract class organizacaoReligiosa extends DireitoPrivado {
 
 	}
 
-	public void anotarNovoSeguidor(Cidadao s) {
+	public Cidadao anotarNovoSeguidor(Cidadao s) {
 		seguidores.add(s);
+		return s;
 	}
 
 }

@@ -6,9 +6,12 @@ public abstract class Profissional extends Cidadao {
 	protected double remuneracao;
 
 
-	public void trabalhar() {
+	public String trabalhar() {
 
-		System.out.println("indo trabalhar...");
+		return "indo trabalhar...";
+	}
+	public double getRemuneracao() {
+		return remuneracao;
 	}
 
 }

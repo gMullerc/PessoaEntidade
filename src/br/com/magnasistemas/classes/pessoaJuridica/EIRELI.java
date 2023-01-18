@@ -175,9 +175,14 @@ public class EIRELI extends DireitoPrivado {
 	public void abrirFilial(Endereco e) {
 		this.enderecoDasFiliais.add(e);
 	}
+	public int quantidadeDeFiliais() {
+		return this.enderecoDasFiliais.size();
+	}
 
-	public Endereco mostrarFiliais() {
-		return (Endereco) this.enderecoDasFiliais;
+	public void mostrarFiliais() {
+		for (Endereco string : enderecoDasFiliais) {
+			System.out.println(string);
+		}
 	}
 	
 	
