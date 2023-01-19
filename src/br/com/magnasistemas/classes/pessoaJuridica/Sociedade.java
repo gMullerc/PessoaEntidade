@@ -169,20 +169,6 @@ public class Sociedade extends DireitoPrivado {
 
 	}
 
-	@Override
-	public String toString() {
-		return "{" + "nome: " + this.nome + '\n' + "genero: " + this.genero + '\n' + "etnia: " + this.etnia + '\n'
-				+ "data de nascimento: " + this.dataDeNascimento + '\n' + "certidao de nascimento:  "
-				+ this.certidaoDeNascimento + '\n' + "rg: " + this.rg + '\n' + "cpf: " + this.cpf + '\n' + "contato: "
-				+ contato + '\n' + "endereco: " + this.endereco + '\n' + "estado civil: " + this.estadoCivil + '\n'
-				+ "escolaridade: " + this.escolaridade + '\n' + "situacao escolar: " + this.situacaoEscolar + '\n'
-				+ "cargo: " + this.cargo + '\n' + "Remuneracao: " + this.remuneracao + '\n' + "CNPJ: " + this.cnpj
-				+ '\n' + "Razao Social: " + this.razaoSocial + '\n' + "Nome Fantasia: " + this.nomeFantasia
-				+ "Endereco da Empresa: " + this.enderecoEmpresarial + '\n' + "Sigla: " + this.sigla + '\n'
-				+ "Natureza: " + this.natureza + '}';
-
-	}
-
 	public void fundarSociedade(enumNatureza e) {
 		this.natureza = e;
 		System.out.println("Sociedade Criada");
@@ -216,6 +202,18 @@ public class Sociedade extends DireitoPrivado {
 
 		}
 		return val;
+	}
+
+	@Override
+	public String toString() {
+
+		return super.toString() + "," + this.natureza + '\n';
+	}
+
+	public String tiposDeDadosCSV() {
+
+		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, CNPJ, razao social, nome fantasia, Logradouro da empresa, numero Da empresa, CEP da empresa, Cidade, UF, Pais, Sigla,natureza \n";
+
 	}
 
 }

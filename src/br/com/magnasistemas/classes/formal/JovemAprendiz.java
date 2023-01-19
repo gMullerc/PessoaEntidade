@@ -33,9 +33,6 @@ public class JovemAprendiz extends Clt implements VinculoEsudantil {
 
 	}
 
-	public JovemAprendiz() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public static class Builder {
 
@@ -160,12 +157,10 @@ public class JovemAprendiz extends Clt implements VinculoEsudantil {
 		return super.toString();
 	}
 
-
-	
 	@Override
 	public String verificar() {
 		if (this.situacaoEscolar == enumSituacaoEscolar.INCOMPLETO) {
-			
+
 			return "Para ser um Jovem Aprendiz é necessário estar cursando o ensino medio ou superior";
 		} else {
 			return "Estah apto...";

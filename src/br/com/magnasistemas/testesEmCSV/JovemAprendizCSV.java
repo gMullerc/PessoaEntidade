@@ -18,75 +18,46 @@ import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 
 public class JovemAprendizCSV {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
-		String nome;
-		enumGenero genero;
-		enumEtnia etnia;
-		Integer diaDeNasc;
-		Month mesDeNasc;
-		Integer anoDeNasc;
-		String certidaoDeNascimento;
-		String rg;
-		String cpf;
-		Integer contato;
-		String rua;
-		Integer cep;
-		Integer numero;
-		String cidade;
-		String uf;
-		String pais;
-		String estadoCivil;
-		enumEscolaridade escolaridade;
-		enumSituacaoEscolar situacaoEscolar;
-		String cargo;
-		Double remuneracao;
-		Integer carteiraDeTrabalho;
-		String nomeDaEmpresa;
-		Integer diaDeInicio;
-		Month mesDeInicio;
-		Integer anoDeInicio;
-		Integer pis;
-
-		String path = "C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\src\\CSVs\\JovemAprendizCSV.csv";
+		String path = "C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVs\\JovemAprendizCSV.csv";
 
 		List<JovemAprendiz> list = new ArrayList<JovemAprendiz>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String linhas = br.readLine();
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy MMMM d");
 
 			while (linhas != null) {
 				linhas = br.readLine();
 				String[] campo = linhas.split(",");
 
-				nome = campo[0];
-				genero = enumGenero.valueOf(campo[1].toUpperCase());
-				etnia = enumEtnia.valueOf(campo[2].toUpperCase());
-				diaDeNasc = Integer.parseInt(campo[3]);
-				mesDeNasc = Month.valueOf(campo[4]);
-				anoDeNasc = Integer.parseInt(campo[5]);
-				certidaoDeNascimento = campo[6];
-				rg = campo[7];
-				cpf = campo[8];
-				contato = Integer.parseInt(campo[9]);
-				rua = campo[10];
-				cep = Integer.parseInt(campo[11]);
-				numero = Integer.parseInt(campo[12]);
-				cidade = campo[13];
-				uf = campo[14];
-				pais = campo[15];
-				estadoCivil = campo[16];
-				escolaridade = enumEscolaridade.valueOf(campo[17].toUpperCase());
-				situacaoEscolar = enumSituacaoEscolar.valueOf(campo[18].toUpperCase());
-				cargo = campo[19];
-				remuneracao = Double.parseDouble(campo[20]);
-				carteiraDeTrabalho = Integer.parseInt(campo[21]);
-				nomeDaEmpresa = campo[22];
-				diaDeInicio = Integer.parseInt(campo[23]);
-				mesDeInicio = Month.valueOf(campo[24]);
-				anoDeInicio = Integer.parseInt(campo[25]);
-				pis = Integer.parseInt(campo[26]);
+				String nome = campo[0];
+				enumGenero genero = enumGenero.valueOf(campo[1].toUpperCase());
+				enumEtnia etnia = enumEtnia.valueOf(campo[2].toUpperCase());
+				Integer diaDeNasc = Integer.parseInt(campo[3]);
+				Month mesDeNasc = Month.valueOf(campo[4]);
+				Integer anoDeNasc = Integer.parseInt(campo[5]);
+				String certidaoDeNascimento = campo[6];
+				String rg = campo[7];
+				String cpf = campo[8];
+				Integer contato = Integer.parseInt(campo[9]);
+				String rua = campo[10];
+				Integer cep = Integer.parseInt(campo[11]);
+				Integer numero = Integer.parseInt(campo[12]);
+				String cidade = campo[13];
+				String uf = campo[14];
+				String pais = campo[15];
+				String estadoCivil = campo[16];
+				enumEscolaridade escolaridade = enumEscolaridade.valueOf(campo[17].toUpperCase());
+				enumSituacaoEscolar situacaoEscolar = enumSituacaoEscolar.valueOf(campo[18].toUpperCase());
+				String cargo = campo[19];
+				Double remuneracao = Double.parseDouble(campo[20]);
+				Integer carteiraDeTrabalho = Integer.parseInt(campo[21]);
+				String nomeDaEmpresa = campo[22];
+				Integer diaDeInicio = Integer.parseInt(campo[23]);
+				Month mesDeInicio = Month.valueOf(campo[24]);
+				Integer anoDeInicio = Integer.parseInt(campo[25]);
+				Integer pis = Integer.parseInt(campo[26]);
 
 				JovemAprendiz traineee = new JovemAprendiz.Builder().nome(nome).genero(genero).etnia(etnia)
 						.dataDeNascimento(LocalDate.of(anoDeNasc, mesDeNasc, diaDeNasc))
@@ -103,17 +74,27 @@ public class JovemAprendizCSV {
 		} catch (Exception e) {
 		}
 
-		try {
+		if (list.size() > 0) {
+			try {
 
-			FileWriter file = new FileWriter(
-					"C:\\Users\\Magna\\eclipse-workspace\\PessoaEntidade\\src\\CSVSaida\\JovemAprendizCSV.csv");
+				// Criando o arquivo para armazenar
+				FileWriter file = new FileWriter(
+						"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\JovemAprendizCSV.csv");
 
-			BufferedWriter output = new BufferedWriter(file);
+				BufferedWriter output = new BufferedWriter(file);
 
-			output.write(list.get(0).toString());
+				output.write(list.get(0).tiposDeDadosCSV());
+				for (int i = 0; i < list.size(); i++) {
+					output.write(list.get(i).toString());
+				}
 
-			output.close();
-		} catch (Exception e) {
+				output.close();
+			} catch (Exception e) {
+			}
+
+		} else {
+			throw new Exception(
+					"Nao é possível criar um CSV com as informações desejadas, pois o Objeto está não existe");
 		}
 
 	}

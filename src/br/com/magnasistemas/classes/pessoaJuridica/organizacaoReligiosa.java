@@ -27,4 +27,9 @@ public abstract class organizacaoReligiosa extends DireitoPrivado {
 		return s;
 	}
 
+	@Override
+	public String toString() {
+
+		return super.toString() + "," + this.religiao + '\n' ;
+	}
 }

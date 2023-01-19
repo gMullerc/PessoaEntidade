@@ -63,5 +63,20 @@ class TestesClasseCidadao {
 		assertEquals("Voce ja esta matriculado", t.matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR));
 
 	}
+	@Test()
+	@DisplayName("Esse metodo deve retornar uma String obrigatoria, caso seje uma string diferente esta incorreto")
+	void testaTiposDeDadosCSV() {
 
+		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil("Solteiro")
+				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
+
+		assertEquals("nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf,"
+				+ " contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, "
+				+ "escolaridade, situacao escolar \n", t.tiposDeDadosCSV());
+
+	}
+	
 }

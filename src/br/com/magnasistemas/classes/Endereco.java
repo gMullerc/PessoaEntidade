@@ -20,10 +20,7 @@ public class Endereco {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-
-		return this.rua + "," + this.numero+ "," +this.cep+ "," +this.cidade+ "," + this.uf+ "," +this.pais;
-		
+		return this.rua + "," + this.numero + "," + this.cep + "," + this.cidade + "," + this.uf + "," + this.pais;
 	}
 
 }

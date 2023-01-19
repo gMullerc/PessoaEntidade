@@ -26,11 +26,10 @@ public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 		this.escolaridade = builder.escolaridade;
 		this.cargo = builder.cargo;
 		this.remuneracao = builder.remuneracao;
-
 		this.nomeDaEmpresa = builder.nomeDaEmpresa;
 		this.diaDeInicio = builder.diaDeInicio;
 
-	} 
+	}
 
 	public static class Builder {
 
@@ -139,25 +138,28 @@ public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 
 	@Override
 	public String toString() {
-		return "nome: " + this.nome + '\n' + "genero: " + this.genero + '\n' + "etnia: " + this.etnia + '\n'
-				+ "data de nascimento: " + this.dataDeNascimento + '\n' + "certidao de nascimento:  "
-				+ this.certidaoDeNascimento + '\n' + "rg: " + this.rg + '\n' + "cpf: " + this.cpf + '\n' + "contato: " + contato
-				+ '\n' + "endereco: " + this.endereco + '\n' + "estado civil: " + this.estadoCivil + '\n'
-				+ "escolaridade: " + this.escolaridade + '\n' + "situacao escolar: " + this.situacaoEscolar + '\n'
-				+ "cargo: " + this.cargo + '\n' + "remuneracao: " + this.remuneracao + '\n'
-				+ "nome da empresa: " + this.nomeDaEmpresa + '\n' + "dia de inicio: "
-				+ this.diaDeInicio + '\n';
+		return this.nome + "," + this.genero + "," + this.dataDeNascimento.getDayOfMonth() + ","
+				+ this.dataDeNascimento.getMonth() + "," + this.dataDeNascimento.getYear() + ","
+				+ this.certidaoDeNascimento + "," + this.rg + "," + this.cpf + "," + this.contato + "," + this.endereco
+				+ "," + this.escolaridade + "," + this.situacaoEscolar + "," + this.cargo + "," + this.remuneracao + ","
+				+ this.nomeDaEmpresa + "," + this.diaDeInicio.getDayOfMonth() + "," + this.diaDeInicio.getMonth() + ","
+				+ this.diaDeInicio.getYear() + '\n';
 	}
 
 	@Override
 	public String verificar() {
 		if (this.situacaoEscolar == enumSituacaoEscolar.INCOMPLETO) {
-			
+
 			return "Para ser um Estagiario é necessário estar cursando o ensino medio ou superior";
 		} else {
 			return "Estah apto...";
 		}
 
+	}
+
+	public String tiposDeDadosCSV() {
+
+		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, nome da empresa, diaDeInicio, mesDeInicio, anoDeInicio \n";
 	}
 
 }

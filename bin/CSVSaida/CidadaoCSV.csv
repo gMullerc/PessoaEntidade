@@ -1,13 +1,2 @@
-Cidadao:
-{nome: Guilherme
-genero: MASCULINO
-etnia: PARDO
-data de nascimento: 2002-08-01
-certidao de nascimento:  2023332
-rg: 528823332
-cpf: 233332222
-contato: 985421298
-endereco: chinigua,3,5736100,Sao Paulo,SP,Brasil
-estado civil: Solteiro
-escolaridade: SUPERIOR
-situacao escolar: CURSANDO}
+nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar 
+Guilherme,MASCULINO,1,AUGUST,2002,2023332,528823332,233332222,985421298,chinigua,3,5736100,Sao Paulo,SP,Brasil,SUPERIOR,CURSANDO

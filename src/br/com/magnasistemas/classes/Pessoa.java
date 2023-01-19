@@ -19,36 +19,25 @@ public abstract class Pessoa {
 		this.falas.add(frase);
 	}
 
-	public void andar() {
-		System.out.println("Andando...");
+	public String andar() {
+		return "Andando...";
 	}
 
-
-	public void falar() throws IndexOutOfBoundsException {
-		try {
-			pensar();
-			Scanner sc = new Scanner(System.in);
-			int escolha = sc.nextInt();
-			System.out.printf("%s: %s\n", this.nome, this.falas.get(escolha - 1));
-			sc.close();
-		} catch (IndexOutOfBoundsException e) {
-
-			throw new IndexOutOfBoundsException("Voce ainda não aprendeu a falar essa frase, tente aprender antes");
-		}
+	
+	public Integer getFrasesAprendidas() {
+		return this.falas.size();
 
 	}
- 
-	public void pegar() {
-		System.out.println("Peguei..");
-	}
 
-	public void pensar() {
+	public boolean pensar() {
 
 		System.out.println("|PENSANDO.. HMM|");
 		for (int i = 0; i < falas.size(); i++) {
 
-			System.out.printf("|%d - %23s|\n", i + 1, falas.get(i)); 
+			System.out.printf("|%d - %23s|\n", i + 1, falas.get(i));
+
 		}
+		return true;
 	}
 
 }

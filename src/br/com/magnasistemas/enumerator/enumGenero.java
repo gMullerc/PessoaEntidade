@@ -9,9 +9,4 @@ public enum enumGenero {
 		this.genero = g;
 	}
 
-	public String getGenero() {
-		return this.genero;
-
-	}
-
 }

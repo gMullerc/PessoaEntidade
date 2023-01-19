@@ -35,7 +35,7 @@ public class EIRELI extends DireitoPrivado {
 		this.enderecoEmpresarial = builder.enderecoEmpresarial;
 		this.sigla = builder.sigla;
 
-	} 
+	}
 
 	public static class Builder {
 
@@ -159,22 +159,17 @@ public class EIRELI extends DireitoPrivado {
 		}
 
 	}
+
 	@Override
 	public String toString() {
-		return "{" + "nome: " + this.nome + '\n' + "genero: " + this.genero + '\n' + "etnia: " + this.etnia + '\n'
-				+ "data de nascimento: " + this.dataDeNascimento + '\n' + "certidao de nascimento:  "
-				+ this.certidaoDeNascimento + '\n' + "rg: " + this.rg + '\n' + "cpf: " + this.cpf + '\n' + "contato: "
-				+ contato + '\n' + "endereco: " + this.endereco + '\n' + "estado civil: " + this.estadoCivil + '\n'
-				+ "escolaridade: " + this.escolaridade + '\n' + "situacao escolar: " + this.situacaoEscolar + '\n'
-				+ "cargo: " + this.cargo + '\n' + "Remuneracao: " + this.remuneracao + '\n' + "CNPJ: " + this.cnpj
-				+ '\n' + "Razao Social: " + this.razaoSocial + '\n' + "Nome Fantasia: " + this.nomeFantasia
-				+ "Endereco da Empresa: " + this.enderecoEmpresarial + '\n' + "Sigla: " + this.sigla +'}';
- 
+		// TODO Auto-generated method stub
+		return super.toString()+ '\n' ;
 	}
 
 	public void abrirFilial(Endereco e) {
 		this.enderecoDasFiliais.add(e);
 	}
+
 	public int quantidadeDeFiliais() {
 		return this.enderecoDasFiliais.size();
 	}
@@ -184,7 +179,12 @@ public class EIRELI extends DireitoPrivado {
 			System.out.println(string);
 		}
 	}
-	
-	
+
+
+	public String tiposDeDadosCSV() {
+		
+		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, CNPJ, razao social, nome fantasia, Logradouro da empresa, numero Da empresa, CEP da empresa, Cidade, UF, Pais, Sigla \n";
+
+	}
 
 }

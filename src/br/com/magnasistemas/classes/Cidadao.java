@@ -60,7 +60,7 @@ public class Cidadao extends Pessoa {
 		public Builder genero(final enumGenero genero) {
 			this.genero = genero;
 			return this;
-		} 
+		}
 
 		public Builder etnia(final enumEtnia etnia) {
 			this.etnia = etnia;
@@ -121,11 +121,10 @@ public class Cidadao extends Pessoa {
 	@Override
 	public String toString() {
 
-		return "Cidadao:\n{" + "nome: " + this.nome + '\n' + "genero: " + this.genero + '\n' + "etnia: " + this.etnia
-				+ '\n' + "data de nascimento: " + this.dataDeNascimento + '\n' + "certidao de nascimento:  "
-				+ this.certidaoDeNascimento + '\n' + "rg: " + this.rg + '\n' + "cpf: " + this.cpf + '\n' + "contato: "
-				+ contato + '\n' + "endereco: " + this.endereco + '\n' + "estado civil: " + this.estadoCivil + '\n'
-				+ "escolaridade: " + this.escolaridade + '\n' + "situacao escolar: " + this.situacaoEscolar + '}';
+		return this.nome + "," + this.genero + "," + this.dataDeNascimento.getDayOfMonth() + ","
+				+ this.dataDeNascimento.getMonth() + "," + this.dataDeNascimento.getYear() + ","
+				+ this.certidaoDeNascimento + "," + this.rg + "," + this.cpf + "," + this.contato + "," + this.endereco
+				+ "," + this.escolaridade + "," + this.situacaoEscolar + '\n';
 	}
 
 	public String matricularEmUmaInstituicao(enumEscolaridade i) {
@@ -138,5 +137,10 @@ public class Cidadao extends Pessoa {
 			this.escolaridade = i;
 			return "Matriculado em: " + this.escolaridade;
 		}
+	}
+
+	public String tiposDeDadosCSV() {
+		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar \n";
+
 	}
 }
