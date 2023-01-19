@@ -171,6 +171,6 @@ public class Seitas extends organizacaoReligiosa {
 
 	public String tiposDeDadosCSV() {
 		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, CNPJ, razao social, nome fantasia, Logradouro da empresa, numero Da empresa, CEP da empresa, Cidade, UF, Pais, sigla \n";
-		}
+	}
 
 }

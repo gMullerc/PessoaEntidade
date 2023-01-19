@@ -33,7 +33,6 @@ public class JovemAprendiz extends Clt implements VinculoEsudantil {
 
 	}
 
-
 	public static class Builder {
 
 		private String nome;

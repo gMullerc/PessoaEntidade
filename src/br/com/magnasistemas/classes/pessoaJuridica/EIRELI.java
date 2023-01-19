@@ -163,8 +163,8 @@ public class EIRELI extends DireitoPrivado {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString()+ '\n' ;
-	}
+		return super.toString() + '\n';
+	} 
 
 	public void abrirFilial(Endereco e) {
 		this.enderecoDasFiliais.add(e);
@@ -180,9 +180,8 @@ public class EIRELI extends DireitoPrivado {
 		}
 	}
 
-
 	public String tiposDeDadosCSV() {
-		
+
 		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, CNPJ, razao social, nome fantasia, Logradouro da empresa, numero Da empresa, CEP da empresa, Cidade, UF, Pais, Sigla \n";
 
 	}
