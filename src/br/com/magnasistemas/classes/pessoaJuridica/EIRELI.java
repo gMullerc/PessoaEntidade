@@ -6,6 +6,7 @@ import java.util.List;
 
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -48,7 +49,7 @@ public class EIRELI extends DireitoPrivado {
 		private String cpf;
 		private int contato;
 		private Endereco endereco;
-		private String estadoCivil;
+		private enumEstadoCivil estadoCivil;
 		private enumEscolaridade escolaridade;
 		private enumSituacaoEscolar situacaoEscolar;
 		private String cargo;
@@ -104,7 +105,7 @@ public class EIRELI extends DireitoPrivado {
 			return this;
 		}
 
-		public Builder estadoCivil(final String estadoCivil) {
+		public Builder estadoCivil(final enumEstadoCivil estadoCivil) {
 			this.estadoCivil = estadoCivil;
 			return this;
 		}
@@ -162,7 +163,6 @@ public class EIRELI extends DireitoPrivado {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return super.toString() + '\n';
 	} 
 
@@ -184,6 +184,12 @@ public class EIRELI extends DireitoPrivado {
 
 		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, CNPJ, razao social, nome fantasia, Logradouro da empresa, numero Da empresa, CEP da empresa, Cidade, UF, Pais, Sigla \n";
 
+	}
+	@Override
+	public String AdicionarValores() {
+		return  "Eireli \n\n"
+				+ super.AdicionarValores()
+				+"Sigla: " + this.sigla + '\n';
 	}
 
 }

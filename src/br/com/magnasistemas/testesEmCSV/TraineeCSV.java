@@ -2,8 +2,10 @@ package br.com.magnasistemas.testesEmCSV;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -14,6 +16,7 @@ import java.util.List;
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.classes.formal.Trainee;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -28,8 +31,8 @@ public class TraineeCSV {
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String linhas = br.readLine();
 
-			while (linhas != null) {
-				linhas = br.readLine();
+			while ((linhas = br.readLine()) != null) {
+
 				String[] campo = linhas.split(",");
 
 				String nome = campo[0];
@@ -48,7 +51,7 @@ public class TraineeCSV {
 				String cidade = campo[13];
 				String uf = campo[14];
 				String pais = campo[15];
-				String estadoCivil = campo[16];
+				enumEstadoCivil estadoCivil = enumEstadoCivil.valueOf(campo[16].toUpperCase());
 				enumEscolaridade escolaridade = enumEscolaridade.valueOf(campo[17].toUpperCase());
 				enumSituacaoEscolar situacaoEscolar = enumSituacaoEscolar.valueOf(campo[18].toUpperCase());
 				String cargo = campo[19];
@@ -69,11 +72,13 @@ public class TraineeCSV {
 						.diaDeInicio(LocalDate.of(anoDeInicio, mesDeInicio, diaDeInicio)).pis(pis).build();
 
 				list.add(traineee);
-
+				linhas = br.readLine();
 			}
 
-		} catch (Exception e) {
+		} catch (FileNotFoundException e) {
+			throw new FileNotFoundException();
 		}
+
 		if (list.size() > 0) {
 			try {
 
@@ -96,10 +101,15 @@ public class TraineeCSV {
 			throw new Exception(
 					"Nao é possível criar um CSV com as informações desejadas, pois o Objeto está não existe");
 		}
-		list.get(0).matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR);
-
-		for (Trainee trainee : list) {
-			System.out.println(trainee);
+		try (FileWriter t = new FileWriter(
+				"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\DadosGlobais.txt", true);
+				BufferedWriter bw = new BufferedWriter(t);
+				PrintWriter out = new PrintWriter(bw);) {
+			for (int i = 0; i < list.size(); i++) {
+				out.println(list.get(0).AdicionarValores());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 

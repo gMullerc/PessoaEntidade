@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -11,6 +12,8 @@ import br.com.magnasistemas.interfaces.VinculoEsudantil;
 
 public class JovemAprendiz extends Clt implements VinculoEsudantil {
 
+	private String apt;
+	
 	public JovemAprendiz(Builder builder) {
 		this.nome = builder.nome;
 		this.genero = builder.genero;
@@ -30,7 +33,7 @@ public class JovemAprendiz extends Clt implements VinculoEsudantil {
 		this.nomeDaEmpresa = builder.nomeDaEmpresa;
 		this.diaDeInicio = builder.diaDeInicio;
 		this.pis = builder.pis;
-
+		
 	}
 
 	public static class Builder {
@@ -44,7 +47,7 @@ public class JovemAprendiz extends Clt implements VinculoEsudantil {
 		private String cpf;
 		private int contato;
 		private Endereco endereco;
-		private String estadoCivil;
+		private enumEstadoCivil estadoCivil;
 		private enumEscolaridade escolaridade;
 		private enumSituacaoEscolar situacaoEscolar;
 		private String cargo;
@@ -99,7 +102,7 @@ public class JovemAprendiz extends Clt implements VinculoEsudantil {
 			return this;
 		}
 
-		public Builder estadoCivil(final String estadoCivil) {
+		public Builder estadoCivil(final enumEstadoCivil estadoCivil) {
 			this.estadoCivil = estadoCivil;
 			return this;
 		}
@@ -159,12 +162,24 @@ public class JovemAprendiz extends Clt implements VinculoEsudantil {
 	@Override
 	public String verificar() {
 		if (this.situacaoEscolar == enumSituacaoEscolar.INCOMPLETO) {
-
+			this.apt = "Para ser um Jovem Aprendiz é necessário estar cursando o ensino medio ou superior";
 			return "Para ser um Jovem Aprendiz é necessário estar cursando o ensino medio ou superior";
 		} else {
+			this.apt = "Estah apto...";
+
 			return "Estah apto...";
 		}
+		
 
+	}
+	@Override
+	public String AdicionarValores() {
+		// TODO Auto-generated method stub
+		verificar();
+			
+		return    	"Jovem Aprendiz:  \n" + 
+					super.AdicionarValores() + 
+					"Apto para o cargo: " +this.apt + '\n';
 	}
 
 }

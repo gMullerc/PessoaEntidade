@@ -32,4 +32,19 @@ public abstract class organizacaoReligiosa extends DireitoPrivado {
 
 		return super.toString() + "," + this.religiao + '\n';
 	}
+	
+	public String tiposDeDadosCSV() {
+		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, CNPJ, razao social, nome fantasia, Logradouro da empresa, numero Da empresa, CEP da empresa, Cidade, UF, Pais, sigla\n";
+	}
+	
+	
+	@Override
+	public String AdicionarValores() {
+		
+		return  "Organização Religiosa \n\n" + 
+				super.AdicionarValores()+  
+					"Religião: " + this.religiao + "\n";
+
+	}
+	
 }

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -45,7 +46,7 @@ public class Igreja extends organizacaoReligiosa {
 		private String cpf;
 		private int contato;
 		private Endereco endereco;
-		private String estadoCivil;
+		private enumEstadoCivil estadoCivil;
 		private enumEscolaridade escolaridade;
 		private enumSituacaoEscolar situacaoEscolar;
 		private String cargo;
@@ -102,7 +103,7 @@ public class Igreja extends organizacaoReligiosa {
 			return this;
 		}
 
-		public Builder estadoCivil(final String estadoCivil) {
+		public Builder estadoCivil(final enumEstadoCivil estadoCivil) {
 			this.estadoCivil = estadoCivil;
 			return this;
 		}
@@ -163,8 +164,6 @@ public class Igreja extends organizacaoReligiosa {
 
 	}
 
-	public String tiposDeDadosCSV() {
-		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, CNPJ, razao social, nome fantasia, Logradouro da empresa, numero Da empresa, CEP da empresa, Cidade, UF, Pais, sigla\n";
-	}
+	
 
 }

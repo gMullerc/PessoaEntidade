@@ -20,7 +20,7 @@ public abstract class PessoaJuridica extends Profissional implements geradorDeNo
 
 
 	@Override
-	public int notaFiscalPessoa(String cnpj, LocalDate dataDeEmissao) {
+	public int notaFiscalPessoa(String c, LocalDate dataDeEmissao) {
 		Random aleatorio = new Random();
 		Integer valor = aleatorio.nextInt(30000) + 10000;
 		boolean verifica = true;
@@ -33,7 +33,7 @@ public abstract class PessoaJuridica extends Profissional implements geradorDeNo
 						valor = aleatorio.nextInt(30000) + 10000;
 					} else {
 						verifica = false;
-
+ 
 					}
 				}
 			}

@@ -51,7 +51,6 @@ public abstract class ProfissionalFormal extends Profissional {
 	}
 
 
-
 	public void setHorasTrabalhadas(int horasTrabalhadas) {
 		this.horasTrabalhadas = horasTrabalhadas;
 	}

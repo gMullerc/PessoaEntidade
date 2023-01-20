@@ -43,7 +43,7 @@ public abstract class DireitoPrivado extends PessoaJuridica {
 
 		}
 		return val;
-	}
+	} 
 
 	public void ListarFuncionario() {
 		for (Cidadao string : this.funcionarios) {
@@ -54,25 +54,27 @@ public abstract class DireitoPrivado extends PessoaJuridica {
 
 	@Override
 	public String toString() {
-		/*
-		 * return "{" + "nome: " + this.nome + '\n' + "genero: " + this.genero + '\n' +
-		 * "etnia: " + this.etnia + '\n' + "data de nascimento: " +
-		 * this.dataDeNascimento + '\n' + "certidao de nascimento:  " +
-		 * this.certidaoDeNascimento + '\n' + "rg: " + this.rg + '\n' + "cpf: " +
-		 * this.cpf + '\n' + "contato: " + contato + '\n' + "endereco: " + this.endereco
-		 * + '\n' + "estado civil: " + this.estadoCivil + '\n' + "escolaridade: " +
-		 * this.escolaridade + '\n' + "situacao escolar: " + this.situacaoEscolar + '\n'
-		 * + "cargo: " + this.cargo + '\n' + "Remuneracao: " + this.remuneracao + '\n' +
-		 * "CNPJ: " + this.cnpj + '\n' + "Razao Social: " + this.razaoSocial + '\n' +
-		 * "Nome Fantasia: " + this.nomeFantasia + "Endereco da Empresa: " +
-		 * this.enderecoEmpresarial + '\n' + "Sigla: " + this.sigla;
-		 */
 
-		return this.nome + "," + this.genero + "," + this.dataDeNascimento.getDayOfMonth() + ","
-				+ this.dataDeNascimento.getMonth() + "," + this.dataDeNascimento.getYear() + ","
-				+ this.certidaoDeNascimento + "," + this.rg + "," + this.cpf + "," + this.contato + "," + this.endereco
-				+ "," + this.escolaridade + "," + this.situacaoEscolar + "," + this.cargo + "," + this.remuneracao + ","
+
+		return  super.toString() + this.cargo + "," + this.remuneracao + ","
 				+ this.cnpj + "," + this.razaoSocial + "," + this.nomeFantasia + "," + this.enderecoEmpresarial;
 
+	}
+	@Override
+	public String tiposDeDadosCSV() {
+		// TODO Auto-generated method stub
+		return super.tiposDeDadosCSV();
+	}
+	
+	@Override
+	public String AdicionarValores() {
+		
+		return    	super.AdicionarValores() + '\n' +  
+					"Situação Empresarial: " + "\n\n" +
+					"Cargo: " + this.cargo + '\n' + 
+					"Remuneração: " + this.remuneracao + '\n' + 
+					"CNPJ: " + this.cnpj + '\n' + 
+					"Razao Social: " + this.razaoSocial + '\n' +	
+					"Endereço Empresarial: " + this.enderecoEmpresarial + '\n';
 	}
 }

@@ -2,36 +2,39 @@ package br.com.magnasistemas.testesEmCSV;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.Month;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import br.com.magnasistemas.classes.Endereco;
-import br.com.magnasistemas.classes.formal.Empregado;
 import br.com.magnasistemas.classes.formal.Estagiario;
-import br.com.magnasistemas.classes.formal.Trainee;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 
 public class EstagiarioCSV {
 	public static void main(String[] args) throws Exception {
-
+		// Importa o csv para dentro da variável path;
 		String path = "C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVs\\EstagiarioCSV.csv";
 
 		List<Estagiario> list = new ArrayList<Estagiario>();
 
+		// Depois de importar, le o arquivo path, divide ele em um array chamado campo,
+		// atraves do split, verifica os valores e cria o objeto
+		// E adiciona esse objeto na lista de estagiários criada acima
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String linhas = br.readLine();
 
-			while (linhas != null) {
-				linhas = br.readLine();
+			while ((linhas = br.readLine()) != null) {
+
 				String[] campo = linhas.split(",");
 
 				String nome = campo[0];
@@ -50,7 +53,7 @@ public class EstagiarioCSV {
 				String cidade = campo[13];
 				String uf = campo[14];
 				String pais = campo[15];
-				String estadoCivil = campo[16];
+				enumEstadoCivil estadoCivil = enumEstadoCivil.valueOf(campo[16].toUpperCase());
 				enumEscolaridade escolaridade = enumEscolaridade.valueOf(campo[17].toUpperCase());
 				enumSituacaoEscolar situacaoEscolar = enumSituacaoEscolar.valueOf(campo[18].toUpperCase());
 				String cargo = campo[19];
@@ -72,16 +75,16 @@ public class EstagiarioCSV {
 
 			}
 
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (FileNotFoundException e) {
+			throw new FileNotFoundException();
 		}
+
+		// verifica o tamanho da lista de objetos
 		if (list.size() > 0) {
 			try {
-
-				// Criando o arquivo para armazenar
+				// Criando o arquivo csv para armazenar os dados
 				FileWriter file = new FileWriter(
 						"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\EstagiarioCSV.csv");
-
 				BufferedWriter output = new BufferedWriter(file);
 
 				output.write(list.get(0).tiposDeDadosCSV());
@@ -90,12 +93,25 @@ public class EstagiarioCSV {
 				}
 
 				output.close();
-			} catch (Exception e) {
+			} catch (IOException e) {
+				throw new IOException("Objeto LIDO pode não existir");
 			}
 
 		} else {
 			throw new Exception(
 					"Nao é possível criar um CSV com as informações desejadas, pois o Objeto está não existe");
+		}
+		// Alem de criar um arquivo separado para cada tipo especifico de pessoa,temos
+		// um com dados mistos se necessário
+		try (FileWriter t = new FileWriter(
+				"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\DadosGlobais.txt", true);
+				BufferedWriter bw = new BufferedWriter(t);
+				PrintWriter out = new PrintWriter(bw);) {
+			for (int i = 0; i < list.size(); i++) {
+				out.println(list.get(0).AdicionarValores());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 
 	}

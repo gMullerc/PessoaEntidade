@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -11,6 +12,9 @@ import br.com.magnasistemas.interfaces.VinculoEsudantil;
 
 public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 
+	private String apt;
+	
+	
 	public Estagiario(Builder builder) {
 		this.nome = builder.nome;
 		this.genero = builder.genero;
@@ -42,7 +46,7 @@ public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 		private String cpf;
 		private int contato;
 		private Endereco endereco;
-		private String estadoCivil;
+		private enumEstadoCivil estadoCivil;
 		private enumEscolaridade escolaridade;
 		private enumSituacaoEscolar situacaoEscolar;
 		private String cargo;
@@ -95,7 +99,7 @@ public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 			return this;
 		}
 
-		public Builder estadoCivil(final String estadoCivil) {
+		public Builder estadoCivil(final enumEstadoCivil estadoCivil) {
 			this.estadoCivil = estadoCivil;
 			return this;
 		}
@@ -141,7 +145,7 @@ public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 		return this.nome + "," + this.genero + "," + this.dataDeNascimento.getDayOfMonth() + ","
 				+ this.dataDeNascimento.getMonth() + "," + this.dataDeNascimento.getYear() + ","
 				+ this.certidaoDeNascimento + "," + this.rg + "," + this.cpf + "," + this.contato + "," + this.endereco
-				+ "," + this.escolaridade + "," + this.situacaoEscolar + "," + this.cargo + "," + this.remuneracao + ","
+				+ "," + this.estadoCivil + "," + this.escolaridade + "," + this.situacaoEscolar + "," + this.cargo + "," + this.remuneracao + ","
 				+ this.nomeDaEmpresa + "," + this.diaDeInicio.getDayOfMonth() + "," + this.diaDeInicio.getMonth() + ","
 				+ this.diaDeInicio.getYear() + '\n';
 	}
@@ -149,14 +153,29 @@ public class Estagiario extends ProfissionalFormal implements VinculoEsudantil {
 	@Override
 	public String verificar() {
 		if (this.situacaoEscolar == enumSituacaoEscolar.INCOMPLETO) {
-
+			this.apt = "Para ser um Estagiario é necessário estar cursando o ensino medio ou superior";
 			return "Para ser um Estagiario é necessário estar cursando o ensino medio ou superior";
 		} else {
+			this.apt = "Estah apto...";
 			return "Estah apto...";
 		}
 
 	}
 
+	@Override
+	public String AdicionarValores() {
+		verificar();
+		return    	"Estagio: \n\n" + 
+					super.AdicionarValores() + '\n' +  
+					"Situação de Trabalho: " + "\n\n" +
+					"Cargo: " + this.cargo + '\n' + 
+					"Remuneração: " + this.remuneracao + '\n' + 
+					"Nome Da Empresa: " + this.nomeDaEmpresa + '\n' + 
+					"Dia De Inicio: " + this.diaDeInicio.getDayOfMonth() + "/" + this.diaDeInicio.getMonth()  + "/" + this.diaDeInicio.getYear() + '\n' +	
+					"Apto para o cargo: " +this.apt + '\n';
+	}
+	
+	
 	public String tiposDeDadosCSV() {
 
 		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, nome da empresa, diaDeInicio, mesDeInicio, anoDeInicio \n";

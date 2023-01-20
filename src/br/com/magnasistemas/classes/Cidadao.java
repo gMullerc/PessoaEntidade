@@ -3,6 +3,7 @@ package br.com.magnasistemas.classes;
 import java.time.LocalDate;
 
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -14,7 +15,7 @@ public class Cidadao extends Pessoa {
 	protected String cpf;
 	protected int contato;
 	protected Endereco endereco;
-	protected String estadoCivil;
+	protected enumEstadoCivil estadoCivil;
 	protected enumEscolaridade escolaridade;
 	protected enumSituacaoEscolar situacaoEscolar;
 
@@ -48,7 +49,7 @@ public class Cidadao extends Pessoa {
 		private String cpf;
 		private int contato;
 		private Endereco endereco;
-		private String estadoCivil;
+		private enumEstadoCivil estadoCivil;
 		private enumEscolaridade escolaridade;
 		private enumSituacaoEscolar situacaoEscolar;
 
@@ -97,7 +98,7 @@ public class Cidadao extends Pessoa {
 			return this;
 		}
 
-		public Builder estadoCivil(final String estadoCivil) {
+		public Builder estadoCivil(final enumEstadoCivil estadoCivil) {
 			this.estadoCivil = estadoCivil;
 			return this;
 		}
@@ -124,7 +125,7 @@ public class Cidadao extends Pessoa {
 		return this.nome + "," + this.genero + "," + this.dataDeNascimento.getDayOfMonth() + ","
 				+ this.dataDeNascimento.getMonth() + "," + this.dataDeNascimento.getYear() + ","
 				+ this.certidaoDeNascimento + "," + this.rg + "," + this.cpf + "," + this.contato + "," + this.endereco
-				+ "," + this.escolaridade + "," + this.situacaoEscolar + '\n';
+				+ "," + this.escolaridade + "," + this.situacaoEscolar;
 	}
 
 	public String matricularEmUmaInstituicao(enumEscolaridade i) {
@@ -139,6 +140,23 @@ public class Cidadao extends Pessoa {
 		}
 	}
 
+	public String AdicionarValores() {
+
+		return 	"================================\n" + 
+				"Cidadao: \n\n"+
+				"Nome: " + this.nome + '\n' + 
+				"Genero: "+ this.genero + '\n' +  
+				"Etnia: " + this.etnia + '\n' +  
+				"Data De Nascimento: " + this.dataDeNascimento.getDayOfMonth() + "/" + this.dataDeNascimento.getMonth()  + "/" + this.dataDeNascimento.getYear() + '\n' + 
+				"Certidao de nascimento: " + this.certidaoDeNascimento + '\n' + 
+				"RG: " + this.rg + '\n' +  
+				"CPF: " + this.cpf + '\n' + 
+				"Endereco: " + this.endereco + '\n' +  
+				"Estado Civil: " + this.estadoCivil + '\n' + 
+				"Escolaridade: " + this.escolaridade + '\n' + 
+				"Situacao Escolar: " + this.situacaoEscolar + '\n'; 
+		}
+	
 	public String tiposDeDadosCSV() {
 		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar \n";
 

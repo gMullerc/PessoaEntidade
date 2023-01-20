@@ -2,17 +2,20 @@ package br.com.magnasistemas.testesEmCSV;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.Month;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.magnasistemas.classes.Endereco;
+import br.com.magnasistemas.classes.pessoaJuridica.Igreja;
 import br.com.magnasistemas.classes.pessoaJuridica.Seitas;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -29,10 +32,9 @@ public class SeitaCSV {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String linhas = br.readLine();
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy MMMM d");
 
-			while (linhas != null) {
-				linhas = br.readLine();
+			while ((linhas = br.readLine()) != null) {
+
 				String[] campo = linhas.split(",");
 
 				String nome = campo[0];
@@ -51,7 +53,7 @@ public class SeitaCSV {
 				String cidade = campo[13];
 				String uf = campo[14];
 				String pais = campo[15];
-				String estadoCivil = campo[16];
+				enumEstadoCivil estadoCivil = enumEstadoCivil.valueOf(campo[16].toUpperCase());
 				enumEscolaridade escolaridade = enumEscolaridade.valueOf(campo[17].toUpperCase());
 				enumSituacaoEscolar situacaoEscolar = enumSituacaoEscolar.valueOf(campo[18].toUpperCase());
 				String cargo = campo[19];
@@ -77,12 +79,13 @@ public class SeitaCSV {
 						.enderecoProfissional(new Endereco(ruaDaEmpresa, cepDaEmpresa, numeroDaEmpresa, cidadeDaEmpresa,
 								ufDaEmpresa, paisDaEmpresa))
 						.Sigla(sigla).religiao(religiao).build();
-				list.add(i);
 
+				list.add(i);
+				
 			}
 
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (FileNotFoundException e) {
+			throw new FileNotFoundException();
 		}
 
 		if (list.size() > 0) {
@@ -109,11 +112,18 @@ public class SeitaCSV {
 			throw new Exception(
 					"Nao é possível criar um CSV com as informações desejadas, pois o Objeto está não existe");
 		}
-		list.get(0).matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR);
 
-		for (Seitas i : list) {
-			System.out.println(i);
+		try (FileWriter t = new FileWriter(
+				"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\DadosGlobais.txt", true);
+				BufferedWriter bw = new BufferedWriter(t);
+				PrintWriter out = new PrintWriter(bw);) {
+			for (int i = 0; i < list.size(); i++) {
+				out.println(list.get(0).AdicionarValores());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
+
 	}
 
 }

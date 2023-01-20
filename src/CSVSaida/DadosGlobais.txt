@@ -1,0 +1,17 @@
+Autonomo: 
+
+================================
+Cidadao: 
+
+Nome: Guilherme
+Genero: MASCULINO
+Etnia: PARDO
+Data De Nascimento: 1/AUGUST/2002
+Certidao de nascimento: 2023332
+RG: 528823332
+CPF: 233332222
+Endereco: chinigua, 3, 5736100, Sao Paulo, SP, Brasil
+Estado Civil: SOLTEIRO
+Escolaridade: SUPERIOR
+Situacao Escolar: CURSANDO
+

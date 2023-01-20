@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.classes.formal.Trainee;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -33,7 +34,7 @@ class TestesClasseProfissionalFormal {
 				.cpf("324234234")
 				.contato(1198637)
 				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
-				.estadoCivil("Solteiro")
+				.estadoCivil(enumEstadoCivil.SOLTEIRO)
 				.escolaridade(enumEscolaridade.SUPERIOR)
 				.situacaoEscolar(enumSituacaoEscolar.CURSANDO)
 				.cargo("Dev")
@@ -62,7 +63,7 @@ class TestesClasseProfissionalFormal {
 				.cpf("324234234")
 				.contato(1198637)
 				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
-				.estadoCivil("Solteiro")
+				.estadoCivil(enumEstadoCivil.SOLTEIRO)
 				.escolaridade(enumEscolaridade.SUPERIOR)
 				.situacaoEscolar(enumSituacaoEscolar.CURSANDO)
 				.cargo("Dev")
@@ -91,7 +92,7 @@ class TestesClasseProfissionalFormal {
 				.cpf("324234234")
 				.contato(1198637)
 				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
-				.estadoCivil("Solteiro")
+				.estadoCivil(enumEstadoCivil.SOLTEIRO)
 				.escolaridade(enumEscolaridade.SUPERIOR)
 				.situacaoEscolar(enumSituacaoEscolar.CURSANDO)
 				.cargo("Dev")
@@ -119,7 +120,7 @@ class TestesClasseProfissionalFormal {
 				.cpf("324234234")
 				.contato(1198637)
 				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
-				.estadoCivil("Solteiro")
+				.estadoCivil(enumEstadoCivil.SOLTEIRO)
 				.escolaridade(enumEscolaridade.SUPERIOR)
 				.situacaoEscolar(enumSituacaoEscolar.CURSANDO)
 				.cargo("Dev")

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import br.com.magnasistemas.classes.Endereco;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
+import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
 import br.com.magnasistemas.enumerator.enumGenero;
 import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
@@ -30,7 +31,6 @@ public class Trainee extends Clt {
 		this.diaDeInicio = builder.diaDeInicio;
 		this.pis = builder.pis;
 
-		
 	}
 
 	public Trainee() {
@@ -48,7 +48,7 @@ public class Trainee extends Clt {
 		private String cpf;
 		private int contato;
 		private Endereco endereco;
-		private String estadoCivil;
+		private enumEstadoCivil estadoCivil;
 		private enumEscolaridade escolaridade;
 		private enumSituacaoEscolar situacaoEscolar;
 		private String cargo;
@@ -103,7 +103,7 @@ public class Trainee extends Clt {
 			return this;
 		}
 
-		public Builder estadoCivil(final String estadoCivil) {
+		public Builder estadoCivil(final enumEstadoCivil estadoCivil) {
 			this.estadoCivil = estadoCivil;
 			return this;
 		}
@@ -159,7 +159,13 @@ public class Trainee extends Clt {
 		// TODO Auto-generated method stub
 		return super.toString();
 	}
-
-
+	@Override
+	public String AdicionarValores() {
+		// TODO Auto-generated method stub
+		
+			
+		return    	"Trainee:  \n" + 
+					super.AdicionarValores();
+	}
 
 }

@@ -23,10 +23,28 @@ public abstract class Pessoa {
 		return "Andando...";
 	}
 
-	
 	public Integer getFrasesAprendidas() {
 		return this.falas.size();
 
+	}
+	public String getNome() {
+		return nome;
+	};
+
+	@Override
+	public boolean equals(Object o) {
+		// TODO Auto-generated method stub
+
+		if ((o instanceof Pessoa) && ((Pessoa) o).getNome().equals(getNome())) {
+			return true;
+		} else
+			return false;
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return this.nome.length() * 15;
 	}
 
 	public boolean pensar() {
