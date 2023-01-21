@@ -23,7 +23,7 @@ import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 public class SociedadeCSV {
 	public static void main(String[] args) throws Exception {
 
-		String path = "C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVs\\SociedadeCSV.csv";
+		String path = "src\\CSVs\\SociedadeCSV.csv";
 		List<Sociedade> list = new ArrayList<Sociedade>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
@@ -88,7 +88,7 @@ public class SociedadeCSV {
 
 				// Criando o arquivo para armazenar
 				FileWriter file = new FileWriter(
-						"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\SociedadesCSV.csv");
+						"src\\CSVSaida\\SociedadesCSV.csv");
 
 				BufferedWriter output = new BufferedWriter(file);
 
@@ -107,7 +107,7 @@ public class SociedadeCSV {
 		}
 
 		try (FileWriter t = new FileWriter(
-				"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\DadosGlobais.txt", true);
+				"src\\CSVSaida\\DadosGlobais.txt", true);
 				BufferedWriter bw = new BufferedWriter(t);
 				PrintWriter out = new PrintWriter(bw);) {
 			for (int i = 0; i < list.size(); i++) {

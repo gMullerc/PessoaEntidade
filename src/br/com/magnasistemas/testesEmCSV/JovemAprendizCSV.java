@@ -23,7 +23,7 @@ import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 public class JovemAprendizCSV {
 	public static void main(String[] args) throws Exception {
 
-		String path = "C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVs\\JovemAprendizCSV.csv";
+		String path = "src\\CSVs\\JovemAprendizCSV.csv";
 
 		List<JovemAprendiz> list = new ArrayList<JovemAprendiz>();
 
@@ -82,7 +82,7 @@ public class JovemAprendizCSV {
 
 				// Criando o arquivo para armazenar
 				FileWriter file = new FileWriter(
-						"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\JovemAprendizCSV.csv");
+						"src\\CSVSaida\\JovemAprendizCSV.csv");
 
 				BufferedWriter output = new BufferedWriter(file);
 
@@ -100,7 +100,7 @@ public class JovemAprendizCSV {
 					"Nao é possível criar um CSV com as informações desejadas, pois o Objeto está não existe");
 		}
 
-		try (FileWriter t = new FileWriter("C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\DadosGlobais.txt",
+		try (FileWriter t = new FileWriter("src\\CSVSaida\\DadosGlobais.txt",
 				true); BufferedWriter bw = new BufferedWriter(t); PrintWriter out = new PrintWriter(bw);) {
 			for (int i = 0; i < list.size(); i++) {
 				out.println(list.get(0).AdicionarValores());

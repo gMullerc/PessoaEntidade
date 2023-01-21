@@ -23,7 +23,7 @@ import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 public class EstagiarioCSV {
 	public static void main(String[] args) throws Exception {
 		// Importa o csv para dentro da variável path;
-		String path = "C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVs\\EstagiarioCSV.csv";
+		String path = "src\\CSVs\\EstagiarioCSV.csv";
 
 		List<Estagiario> list = new ArrayList<Estagiario>();
 
@@ -84,7 +84,7 @@ public class EstagiarioCSV {
 			try {
 				// Criando o arquivo csv para armazenar os dados
 				FileWriter file = new FileWriter(
-						"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\EstagiarioCSV.csv");
+						"src\\CSVSaida\\EstagiarioCSV.csv");
 				BufferedWriter output = new BufferedWriter(file);
 
 				output.write(list.get(0).tiposDeDadosCSV());
@@ -104,7 +104,7 @@ public class EstagiarioCSV {
 		// Alem de criar um arquivo separado para cada tipo especifico de pessoa,temos
 		// um com dados mistos se necessário
 		try (FileWriter t = new FileWriter(
-				"C:\\Users\\Guilherme\\Desktop\\PessoaEntidade\\src\\CSVSaida\\DadosGlobais.txt", true);
+				"src\\CSVSaida\\DadosGlobais.txt", true);
 				BufferedWriter bw = new BufferedWriter(t);
 				PrintWriter out = new PrintWriter(bw);) {
 			for (int i = 0; i < list.size(); i++) {
