@@ -68,5 +68,53 @@ class TesteClasseEstagiario {
 		assertEquals("Para ser um Estagiario é necessário estar cursando o ensino medio ou superior", valor);
 	}
 	
+	@Test()
+	@DisplayName("Verifica se está retornando uma string nao vazia")
+	void testeMetodoAdicionarValoresVazio() {
+
+		Estagiario i = new Estagiario.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.VIUVO)
+				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).cargo("Dev")
+				.remuneracao(2200.00).nomeDaEmpresa("MagnaSitemas")
+				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).build();
+
+		assertNotEquals("", i.AdicionarValores());
+
+	}
+
+	@Test()
+	@DisplayName("Verifica o metodo tipo de dados se esta vindo diferente de vazio")
+	void testeMetodoTipoDeDados() {
+
+		Estagiario i = new Estagiario.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.VIUVO)
+				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).cargo("Dev")
+				.remuneracao(2200.00).nomeDaEmpresa("MagnaSitemas")
+				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).build();
+
+		assertNotEquals("", i.tiposDeDadosCSV());
+
+	}
+
+	@Test()
+	@DisplayName("Verifica o metodo to String")
+	void testeMetodoToString() {
+
+		Estagiario i = new Estagiario.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.VIUVO)
+				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).cargo("Dev")
+				.remuneracao(2200.00).nomeDaEmpresa("MagnaSitemas")
+				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).build();
+
+		assertNotEquals("", i.toString());
+
+	}
+	
 }
 	

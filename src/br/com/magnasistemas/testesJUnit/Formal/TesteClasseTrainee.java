@@ -19,7 +19,7 @@ import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 
 class TesteClasseTrainee {
 
-	@Test()
+	@Test
 	@DisplayName("Verifica se o objeto foi construido corretamente")
 	void testaSeFoiCorretamentePopulado() {
 

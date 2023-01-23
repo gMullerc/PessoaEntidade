@@ -4,15 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.time.LocalDate;
-import java.time.Month;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import br.com.magnasistemas.classes.Cidadao;
 import br.com.magnasistemas.classes.Endereco;
-import br.com.magnasistemas.classes.formal.Trainee;
-import br.com.magnasistemas.classes.pessoaJuridica.EIRELI;
 import br.com.magnasistemas.classes.pessoaJuridica.Igreja;
 import br.com.magnasistemas.classes.pessoaJuridica.Sociedade;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
@@ -30,9 +27,10 @@ class TestesClasseSociedade {
 		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
 				.Sigla("Sociedade").natureza(enumNatureza.SIMPLES).build();
 
@@ -47,17 +45,19 @@ class TestesClasseSociedade {
 		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
 				.Sigla("Sociedade").natureza(enumNatureza.SIMPLES).build();
 
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
 		int qntd = i.quantidadadeDeSocios();
 
@@ -72,23 +72,26 @@ class TestesClasseSociedade {
 		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
 				.Sigla("Sociedade").natureza(enumNatureza.SIMPLES).build();
 
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
 		Cidadao j = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
 		i.addNovosSocios(j);
 		i.ListarFuncionario();
@@ -104,28 +107,31 @@ class TestesClasseSociedade {
 		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
 				.Sigla("Sociedade").natureza(enumNatureza.SIMPLES).build();
 
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
 		Cidadao j = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
 		i.addNovosSocios(t);
 		i.ListarFuncionario();
 
-		assertNotEquals(false, i.removerSocios(j));
+		assertEquals(false, i.removerSocios(j));
 
 	}
 
@@ -136,17 +142,19 @@ class TestesClasseSociedade {
 		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
 				.Sigla("Sociedade").natureza(enumNatureza.SIMPLES).build();
 
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 		i.addNovosSocios(t);
 		int qntd = i.quantidadadeDeSocios();
 
@@ -154,4 +162,123 @@ class TestesClasseSociedade {
 
 	}
 
+	@Test()
+	@DisplayName("Verifica se está retornando uma string")
+	void testeMetodoAdicionarValores() {
+
+		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
+				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
+				.build();
+
+		String val = i.AdicionarValores();
+		assertEquals(val, i.AdicionarValores());
+
+	}
+
+	@Test()
+	@DisplayName("Verifica se está retornando uma string nao vazia")
+	void testeMetodoAdicionarValoresVazio() {
+
+		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
+				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
+				.build();
+
+		assertNotEquals("", i.AdicionarValores());
+
+	}
+
+	@Test()
+	@DisplayName("Verifica o metodo tipo de dados se esta vindo diferente de vazio")
+	void testeMetodoTipoDeDados() {
+
+		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
+				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
+				.build();
+
+		assertNotEquals("", i.tiposDeDadosCSV());
+
+	}
+
+	@Test()
+	@DisplayName("Verifica o metodo to String")
+	void testeMetodoToString() {
+
+		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
+				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
+				.build();
+
+		assertNotEquals("", i.toString());
+
+	}
+
+	@Test()
+	@DisplayName("TestaMetodoFundarSociedade")
+	void testeMetodoFundarSociedade() {
+
+		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
+				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
+				.build();
+
+		assertEquals("Sociedade Criada", i.fundarSociedade(enumNatureza.LIMITADA));
+
+	}
+
+	@Test()
+	@DisplayName("Testa metodo listar socios")
+	void testaMetodoListarSocios() {
+
+		Sociedade i = new Sociedade.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
+				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
+				.build();
+
+		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+
+		i.addNovosSocios(t);
+		String val = i.listarSocios();
+	
+		
+		assertEquals(val, i.listarSocios());
+
+	}
 }

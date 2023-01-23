@@ -2,6 +2,7 @@ package br.com.magnasistemas.testesJUnit.PessoaJuridica;
 
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -33,9 +34,10 @@ class TestesClasseAutonomo {
 		Autonomo i = new Autonomo.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
-		
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
+
 		int contador = 0;
 
 		for (int j = 0; j < 1000; j++) {
@@ -43,6 +45,42 @@ class TestesClasseAutonomo {
 			contador++;
 		}
 		assertEquals(contador, i.getQuantidadeNotasGeradas());
+
+	}
+
+	@Test()
+	@DisplayName("Verifica o retorno do metodo ToString")
+	void testeNoMetodoToString() {
+
+		Autonomo i = new Autonomo.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
+
+		String v = i.toString();
+
+		assertEquals(
+				"Guilherme,MASCULINO,23,JANUARY,2023,324234234234,53123972184,324234234,1198637,chinigua, 3, 1552448, SaoPaulo, SP, Brail,SUPERIOR,CURSANDO",
+				v);
+
+	}
+
+	@Test()
+	@DisplayName("Verifica o retorno do metodo ToString se retorna um valor vazio, deve retornar uma string cheia")
+	void testeNoMetodoToStringSeRetornaVazio() {
+
+		Autonomo i = new Autonomo.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
+
+		String v = i.toString();
+
+		assertNotEquals("", v);
 
 	}
 

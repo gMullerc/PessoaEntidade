@@ -1,20 +1,15 @@
 package br.com.magnasistemas.testesJUnit;
 
-import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.time.LocalDate;
-import java.time.Month;
 
-import org.junit.jupiter.api.AssertionsKt;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import br.com.magnasistemas.classes.Cidadao;
 import br.com.magnasistemas.classes.Endereco;
-import br.com.magnasistemas.classes.formal.Trainee;
-import br.com.magnasistemas.classes.pessoaJuridica.Igreja;
 import br.com.magnasistemas.enumerator.enumEscolaridade;
 import br.com.magnasistemas.enumerator.enumEstadoCivil;
 import br.com.magnasistemas.enumerator.enumEtnia;
@@ -30,26 +25,28 @@ class TestesClasseCidadao {
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.CASADO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.CASADO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
 		assertNotEquals(null, t);
 
 	}
-	
+
 	@Test()
 	@DisplayName("Esse teste deveria retornar que foi matriculado quando a situacao for diferente de cursando")
-	void testeMetodoMatricularEmInstituicaoPOSITIVO() { 
+	void testeMetodoMatricularEmInstituicaoPOSITIVO() {
 
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.CASADO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.CASADO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.INCOMPLETO).build();
 
 		assertEquals("Matriculado em: SUPERIOR", t.matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR));
 
-	} 
+	}
 
 	@Test()
 	@DisplayName("Esse teste deveria retornar que foi matriculado quando a situacao for cursando")
@@ -58,12 +55,14 @@ class TestesClasseCidadao {
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.CASADO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.CASADO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
 
 		assertEquals("Voce ja esta matriculado", t.matricularEmUmaInstituicao(enumEscolaridade.SUPERIOR));
 
 	}
+
 	@Test()
 	@DisplayName("Esse metodo deve retornar uma String obrigatoria, caso seje uma string diferente esta incorreto")
 	void testaTiposDeDadosCSV() {
@@ -71,13 +70,14 @@ class TestesClasseCidadao {
 		Cidadao t = new Cidadao.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.CASADO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.CASADO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).build();
 
 		assertEquals("nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf,"
 				+ " contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, "
 				+ "escolaridade, situacao escolar \n", t.tiposDeDadosCSV());
 
 	}
-	
+
 }

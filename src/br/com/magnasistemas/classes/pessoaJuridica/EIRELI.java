@@ -2,6 +2,7 @@ package br.com.magnasistemas.classes.pessoaJuridica;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import br.com.magnasistemas.classes.Endereco;
@@ -174,10 +175,15 @@ public class EIRELI extends DireitoPrivado {
 		return this.enderecoDasFiliais.size();
 	}
 
-	public void mostrarFiliais() {
-		for (Endereco string : enderecoDasFiliais) {
-			System.out.println(string);
+	public String mostrarFiliais() {
+
+		Iterator<Endereco> a = enderecoDasFiliais.iterator();
+		String valor  = "";
+		while (a.hasNext()) {
+			valor = valor.concat(a.next().toString());
+		
 		}
+		return valor;
 	}
 
 	public String tiposDeDadosCSV() {

@@ -3,6 +3,7 @@ package br.com.magnasistemas.classes.pessoaJuridica;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -43,8 +44,16 @@ public abstract class PessoaJuridica extends Profissional implements geradorDeNo
 	}
 
 	
-	public HashSet<Integer> getNotasGeradas() {
-		return notasGeradas;
+	public String getNotasGeradas() {
+		Iterator<Integer> a = notasGeradas.iterator();
+		String val =  "";
+		
+		while (a.hasNext()) {
+			val = val.concat(a.next().toString()  + ", ");
+			
+		}
+		return val;
+		
 	}
 	public Integer getQuantidadeNotasGeradas() {
 		return notasGeradas.size();

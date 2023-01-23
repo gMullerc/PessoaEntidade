@@ -14,6 +14,7 @@ public abstract class Pessoa {
 	protected enumEtnia etnia;
 	protected LocalDate dataDeNascimento;
 	protected List<String> falas = new ArrayList<>();
+	private int hashcode;
 
 	public void aprenderNovasFalas(String frase) {
 		this.falas.add(frase);
@@ -31,7 +32,7 @@ public abstract class Pessoa {
 		return nome;
 	};
 
-	@Override
+/*	@Override
 	public boolean equals(Object o) {
 		// TODO Auto-generated method stub
 
@@ -39,12 +40,12 @@ public abstract class Pessoa {
 			return true;
 		} else
 			return false;
-	}
+	}*/
 
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
-		return this.nome.length() * 15;
+		return this.hashcode = this.nome.length() * 15 + this.etnia.toString().length() * 15;
 	}
 
 	public boolean pensar() {

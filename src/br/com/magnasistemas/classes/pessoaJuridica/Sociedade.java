@@ -2,6 +2,7 @@ package br.com.magnasistemas.classes.pessoaJuridica;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import br.com.magnasistemas.classes.Cidadao;
@@ -169,9 +170,9 @@ public class Sociedade extends DireitoPrivado {
 
 	}
 
-	public void fundarSociedade(enumNatureza e) {
+	public String fundarSociedade(enumNatureza e) {
 		this.natureza = e;
-		System.out.println("Sociedade Criada");
+		return "Sociedade Criada";
 	}
 
 	public int quantidadadeDeSocios() {
@@ -183,10 +184,14 @@ public class Sociedade extends DireitoPrivado {
 		return quantidadadeDeSocios();
 	}
 
-	public void listarSocios() {
-		for (int i = 0; i < socios.size(); i++) {
-			System.out.println(i + " " + socios.get(i));
+	public String listarSocios() {
+		Iterator<Cidadao> a = this.socios.iterator();
+		String val = "";
+		while (a.hasNext()) {
+			val = val.concat(a.next().toString() + ", ");
+
 		}
+		return val;
 	}
 
 	public boolean removerSocios(Cidadao f) {
@@ -215,13 +220,12 @@ public class Sociedade extends DireitoPrivado {
 		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar, cargo, remuneracao, CNPJ, razao social, nome fantasia, Logradouro da empresa, numero Da empresa, CEP da empresa, Cidade, UF, Pais, Sigla,natureza \n";
 
 	}
+
 	@Override
 	public String AdicionarValores() {
 		// TODO Auto-generated method stub
-		return  "Sociedade \n\n"
-		+ super.AdicionarValores()
-		+"Sigla: " + this.sigla + '\n'
-		+"Natureza: " + this.natureza + '\n' ;
+		return "Sociedade \n\n" + super.AdicionarValores() + "Sigla: " + this.sigla + '\n' + "Natureza: "
+				+ this.natureza + '\n';
 	}
 
 }

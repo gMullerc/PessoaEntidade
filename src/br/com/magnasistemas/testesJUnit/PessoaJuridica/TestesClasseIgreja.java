@@ -32,7 +32,7 @@ class TestesClasseIgreja {
 				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
 				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
-				.Sigla("Sociedade").build();
+				.Sigla("Sociedade").religiao("Catolico").build();
 
 		assertNotEquals(null, i); 
 

@@ -2,6 +2,7 @@ package br.com.magnasistemas.classes;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Random;
 
 import br.com.magnasistemas.enumerator.enumEscolaridade;
@@ -153,8 +154,17 @@ public class Autonomo extends Cidadao implements geradorDeNota {
 
 	}
 
+
 	public Integer getQuantidadeNotasGeradas() {
 		return notasGeradas.size();
+	}
+	
+	public void getNotasFiscais() {
+		
+		for (Integer i : notasGeradas) {
+			System.out.println(i);
+		}
+
 	}
 
 }

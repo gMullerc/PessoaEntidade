@@ -13,7 +13,7 @@ public abstract class ProfissionalFormal extends Profissional {
 	protected String nomeDaEmpresa;
 	protected LocalDate diaDeInicio;
 
-	public void baterPonto(LocalTime horaInicial, LocalTime horaFinal) {
+	public int baterPonto(LocalTime horaInicial, LocalTime horaFinal) {
 
 		int somaInicial = horaInicial.getHour() * 60 + horaInicial.getMinute() + horaInicial.getSecond();
 
@@ -33,8 +33,9 @@ public abstract class ProfissionalFormal extends Profissional {
 			int aux = resultado % 60;
 			this.horasTrabalhadas = resultado / 60;
 			System.out.printf("%d horas e %d minutos\n", this.horasTrabalhadas, aux);
-		}
+		} 
 		descancoSemanal();
+		return this.horasTrabalhadas;
 	}
 
 	public boolean descancoSemanal() {

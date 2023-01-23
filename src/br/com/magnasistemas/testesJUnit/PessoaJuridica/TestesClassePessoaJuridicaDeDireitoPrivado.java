@@ -28,19 +28,20 @@ class TestesClassePessoaJuridicaDeDireitoPrivado {
 		Igreja i = new Igreja.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
 				.religiao("CATOLICA").build();
 
 		Estagiario a = new Estagiario.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).nomeDaEmpresa("MagnaSitemas").diaDeInicio(LocalDate.of(2020, Month.JULY, 05))
-				.build();
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00)
+				.nomeDaEmpresa("MagnaSitemas").diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).build();
 
 		assertEquals(a, i.contratarFuncionario(a));
 
@@ -53,18 +54,20 @@ class TestesClassePessoaJuridicaDeDireitoPrivado {
 		Igreja i = new Igreja.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
 				.religiao("CATOLICA").build();
 
 		Trainee t = new Trainee.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00)
+				.carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
 				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).pis(23123123).build();
 
 		assertEquals(true, i.realizarPagamento(2200, t));
@@ -78,18 +81,20 @@ class TestesClassePessoaJuridicaDeDireitoPrivado {
 		Igreja i = new Igreja.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
 				.religiao("CATOLICA").build();
 
 		Trainee t = new Trainee.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00)
+				.carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
 				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).pis(23123123).build();
 
 		assertEquals(false, i.realizarPagamento(2, t));
@@ -103,26 +108,29 @@ class TestesClassePessoaJuridicaDeDireitoPrivado {
 		Igreja i = new Igreja.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
 				.religiao("CATOLICA").build();
 
 		Trainee t = new Trainee.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00)
+				.carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
 				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).pis(23123123).build();
 
 		Trainee j = new Trainee.Builder().nome("Joao").genero(enumGenero.MASCULINO).etnia(enumEtnia.PRETO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00)
+				.carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
 				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).pis(23123123).build();
 
 		i.contratarFuncionario(j);
@@ -139,32 +147,53 @@ class TestesClassePessoaJuridicaDeDireitoPrivado {
 		Igreja i = new Igreja.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).cnpj("2323").razaoSocial("Grande").nomeFantasia("")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
 				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
 				.religiao("CATOLICA").build();
 
 		Trainee t = new Trainee.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00)
+				.carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
 				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).pis(23123123).build();
 
 		Trainee j = new Trainee.Builder().nome("Joao").genero(enumGenero.MASCULINO).etnia(enumEtnia.PRETO)
 				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
 				.cpf("324234234").contato(1198637)
-				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).estadoCivil(enumEstadoCivil.SOLTEIRO)
-				.escolaridade(enumEscolaridade.SUPERIOR).situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev")
-				.remuneracao(2200.00).carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00)
+				.carteiraDeTrabalho(23232323).nomeDaEmpresa("MagnaSitemas")
 				.diaDeInicio(LocalDate.of(2020, Month.JULY, 05)).pis(23123123).build();
 
 		i.contratarFuncionario(j);
 		i.ListarFuncionario();
 
 		assertNotEquals(true, i.demitirFuncionario(t));
+
+	}
+
+	@Test()
+	@DisplayName("Testa tipos de dados")
+	void testaTiposdeDados() {
+
+		Igreja i = new Igreja.Builder().nome("Guilherme").genero(enumGenero.MASCULINO).etnia(enumEtnia.PARDO)
+				.dataDeNascimento(LocalDate.now()).certidaoDeNascimento("324234234234").rg("53123972184")
+				.cpf("324234234").contato(1198637)
+				.endereco(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail"))
+				.estadoCivil(enumEstadoCivil.SOLTEIRO).escolaridade(enumEscolaridade.SUPERIOR)
+				.situacaoEscolar(enumSituacaoEscolar.CURSANDO).cargo("Dev").remuneracao(2200.00).cnpj("2323")
+				.razaoSocial("Grande").nomeFantasia("")
+				.enderecoProfissional(new Endereco("chinigua", 05730100, 3, "SaoPaulo", "SP", "Brail")).Sigla("EIRELI")
+				.religiao("CATOLICA").build();
+
+		assertNotEquals("", i.tiposDeDadosCSV());
 
 	}
 

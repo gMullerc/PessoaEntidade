@@ -23,14 +23,14 @@ import br.com.magnasistemas.enumerator.enumSituacaoEscolar;
 public class EstagiarioCSV {
 	public static void main(String[] args) throws Exception {
 		// Importa o csv para dentro da variável path;
-		String path = "src\\CSVs\\EstagiarioCSV.csv";
+		String caminho = "src\\CSVs\\EstagiarioCSV.csv";
 
 		List<Estagiario> list = new ArrayList<Estagiario>();
 
 		// Depois de importar, le o arquivo path, divide ele em um array chamado campo,
 		// atraves do split, verifica os valores e cria o objeto
 		// E adiciona esse objeto na lista de estagiários criada acima
-		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+		try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
 			String linhas = br.readLine();
 
 			while ((linhas = br.readLine()) != null) {

@@ -96,7 +96,7 @@ public class EmpregadoCSV {
 
 		} else {
 			throw new Exception(
-					"Nao é possível criar um CSV com as informações desejadas, pois o Objeto está não existe");
+					"Nao é possível criar um CSV com as informações desejadas, pois o Objeto não existe");
 		}
 
 		try (FileWriter t = new FileWriter("src\\CSVSaida\\DadosGlobais.txt",
