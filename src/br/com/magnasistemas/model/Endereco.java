@@ -19,29 +19,6 @@ public class Endereco {
 
 	}
 
-	public String getLogradouro() {
-		return logradouro;
-	}
-
-	public int getNumero() {
-		return numero;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public String getUf() {
-		return uf;
-	}
-
-	public String getPais() {
-		return pais;
-	}
-
-	public int getCep() {
-		return cep;
-	}
 
 	@Override
 	public String toString() {

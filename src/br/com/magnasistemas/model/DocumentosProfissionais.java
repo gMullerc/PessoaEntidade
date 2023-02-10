@@ -10,13 +10,6 @@ public class DocumentosProfissionais {
 		this.ctps = ctps;
 	}
 
-	public Long getPis() {
-		return pis;
-	}
-
-	public Long getCtps() {
-		return ctps;
-	}
 
 	@Override
 	public String toString() {

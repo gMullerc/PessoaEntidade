@@ -13,11 +13,11 @@ public class Cidadao extends Pessoa {
 	protected String certidaoDeNascimento;
 	protected String rg;
 	protected String cpf;
-	protected int contato;
-	protected Endereco endereco;
 	protected enumEstadoCivil estadoCivil;
 	protected enumEscolaridade escolaridade;
 	protected enumSituacaoEscolar situacaoEscolar;
+
+	private static final String TIPOSDEDADOS = "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar";
 
 	public Cidadao() {
 	}
@@ -47,7 +47,7 @@ public class Cidadao extends Pessoa {
 		private String certidaoDeNascimento;
 		private String rg;
 		private String cpf;
-		private int contato;
+		private Contato contato;
 		private Endereco endereco;
 		private enumEstadoCivil estadoCivil;
 		private enumEscolaridade escolaridade;
@@ -88,7 +88,7 @@ public class Cidadao extends Pessoa {
 			return this;
 		}
 
-		public Builder contato(final int contato) {
+		public Builder contato(final Contato contato) {
 			this.contato = contato;
 			return this;
 		}
@@ -120,9 +120,19 @@ public class Cidadao extends Pessoa {
 	}
 
 	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
+
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
+
+	@Override
 	public String toString() {
 
-		return  "\n" + this.nome + "," + this.genero + "," + this.dataDeNascimento.getDayOfMonth() + ","
+		return "\n" + this.nome + "," + this.genero + "," + this.dataDeNascimento.getDayOfMonth() + ","
 				+ this.dataDeNascimento.getMonth() + "," + this.dataDeNascimento.getYear() + ","
 				+ this.certidaoDeNascimento + "," + this.rg + "," + this.cpf + "," + this.contato + "," + this.endereco
 				+ "," + this.escolaridade + "," + this.situacaoEscolar + ",";
@@ -140,7 +150,7 @@ public class Cidadao extends Pessoa {
 		}
 	}
 
-	public String AdicionarValores() {
+	public String adicionarValores() {
 
 		return "================================\n" + "Cidadao: \n\n" + "Nome: " + this.nome + '\n' + "Genero: "
 				+ this.genero + '\n' + "Etnia: " + this.etnia + '\n' + "Data De Nascimento: "
@@ -152,7 +162,7 @@ public class Cidadao extends Pessoa {
 	}
 
 	public String tiposDeDadosCSV() {
-		return "nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar";
+		return TIPOSDEDADOS;
 
 	}
 }

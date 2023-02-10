@@ -4,12 +4,24 @@ public class Documento {
 
 	private String cpf;
 	private String rg;
-	private String certidaDeNascimento;
+	private String certidaoDeNascimento;
 
-	public Documento(String cpf, String rg, String certidaDeNascimento) {
+	public Documento(String cpf, String rg, String certidaoDeNascimento) {
 		this.cpf = cpf;
 		this.rg = rg;
-		this.certidaDeNascimento = certidaDeNascimento;
+		this.certidaoDeNascimento = certidaoDeNascimento;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public String getCertidaoDeNascimento() {
+		return certidaoDeNascimento;
+	}
+
+	public String getRg() {
+		return rg;
 	}
 
 }

@@ -15,49 +15,20 @@ public abstract class Pessoa {
 	protected enumGenero genero;
 	protected enumEtnia etnia;
 	protected LocalDate dataDeNascimento;
+	private static final String ANDAR = "Andando...";
 
 	protected List<String> falas = new ArrayList<>();
-	private int hashcode;
-
-	public String getNome() {
-		return nome;
-	}
-
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public Contato getContato() {
-		return contato;
-	}
-
-	public enumGenero getGenero() {
-		return genero;
-	}
-
-	public enumEtnia getEtnia() {
-		return etnia;
-	}
-
-	public LocalDate getDataDeNascimento() {
-		return dataDeNascimento;
-	}
-
-	public int getHashcode() {
-		return hashcode;
-	}
 
 	public void aprenderNovasFalas(String frase) {
 		this.falas.add(frase);
 	}
 
 	public String andar() {
-		return "Andando...";
+		return ANDAR;
 	}
 
 	public String falar(int i) {
-		String val = this.falas.get(i - 1);
-		return val;
+		return this.falas.get(i - 1);
 	}
 
 	@Override
@@ -65,15 +36,9 @@ public abstract class Pessoa {
 		return Objects.hash(nome, genero, etnia, dataDeNascimento);
 	}
 
-	public boolean pensar() {
-
-		System.out.println("|PENSANDO.. HMM|");
-		for (int i = 0; i < falas.size(); i++) {
-
-			System.out.printf("|%d - %23s|\n", i + 1, falas.get(i));
-
-		}
-		return true;
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
 	}
 
 }

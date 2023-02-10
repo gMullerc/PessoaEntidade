@@ -14,6 +14,8 @@ public class Profissional extends Cidadao {
 	protected String cargo;
 	protected EnumTipoDeProfissional enumTipoDeProfissional;
 	protected Double remuneracao;
+	
+	private  static final String TRABALHAR = "indo trabalhar...";
 
 	public Profissional(Builder builder) {
 		this.nome = builder.nome;
@@ -40,9 +42,9 @@ public class Profissional extends Cidadao {
 		private enumEtnia etnia;
 		private LocalDate dataDeNascimento;
 		private String certidaoDeNascimento;
-		private String rg;
+		private String rg; 
 		private String cpf;
-		private int contato;
+		private Contato contato;
 		private Endereco endereco;
 		private enumEstadoCivil estadoCivil;
 		private enumEscolaridade escolaridade;
@@ -86,7 +88,7 @@ public class Profissional extends Cidadao {
 			return this;
 		}
 
-		public Builder contato(final int contato) {
+		public Builder contato(final Contato contato) {
 			this.contato = contato;
 			return this;
 		}
@@ -132,6 +134,16 @@ public class Profissional extends Cidadao {
 
 	}
 
+	
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
+	
 	@Override
 	public String tiposDeDadosCSV() {
 		return super.tiposDeDadosCSV()+ ",cargo,enumTipoDeProfissional,remuneracao";
@@ -142,14 +154,12 @@ public class Profissional extends Cidadao {
 	}
 	
 	@Override
-	public String AdicionarValores() {
-		// TODO Auto-generated method stub
-		return super.AdicionarValores() + "cargo: " + this.cargo + '\n' + "Tipo De Profissional: " + this.enumTipoDeProfissional + '\n'
+	public String adicionarValores() {
+		return super.adicionarValores() + "cargo: " + this.cargo + '\n' + "Tipo De Profissional: " + this.enumTipoDeProfissional + '\n'
 				+ "Remuneracao: " + this.remuneracao + '\n';
 	}
 	public String trabalhar() {
-
-		return "indo trabalhar...";
+		return TRABALHAR;
 	}
 
 }
