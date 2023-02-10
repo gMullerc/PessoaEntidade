@@ -1,2 +1,2 @@
-nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar 
-Guilherme,MASCULINO,1,AUGUST,2002,2023332,528823332,233332222,985421298,chinigua, 3, 5736100, Sao Paulo, SP, Brasil,SUPERIOR,CURSANDO
+nome, genero,etnia,dia, mes, ano, certidao de nascimento,rg, cpf, contato, Logradouro, numero, cep, cidade, UF, Pais, estado civil, escolaridade, situacao escolar
+Guilherme,MASCULINO,1,AUGUST,2002,2023332,528823332,233332222,985421298,chinigua,3,Sao Paulo,SP,Brasil,5736100,SUPERIOR,CURSANDO,
